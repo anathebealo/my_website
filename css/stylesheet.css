@@ -82,7 +82,7 @@ h3 {
   border: none;
   opacity: 1;
   background-color: #d9d9e3;
-  -webkit-transition: background-color .5s linear;
+  -webkit-transition: background-color .25s linear;
 }
 
 .project_button {
