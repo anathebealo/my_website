@@ -1,0 +1,131 @@
+body {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+p {
+    font-size: 13px;
+}
+
+div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4 {
+    margin: 0px;
+}
+
+table {
+    border: solid 2px black;
+    box-shadow: 4px -3px 4px -1px rgba(0,0,0,0.51);
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 70%;
+}
+
+#loser {
+    border: solid 1px black;
+    box-shadow: 5px -4px 5px -1px rgba(0,0,0,0.51);
+    background-color: #66ffb3;
+    border-radius: 5px;
+    width: 60%;
+    height: 3%;
+    margin-right: auto;
+    margin-left: auto;
+    visibility: hidden;
+}
+
+#losertext {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    margin: 0px;
+}
+
+#score {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    margin: 0px;
+}
+
+td {
+    text-align: center;
+    padding: 2px;
+    font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.empty div {
+    width: 80%;
+    height: 80%;
+    background-color: white;
+}
+
+#cursor div {
+    width: 80%;
+    height: 80%;
+    background-color: black;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite;
+    animation-name: example;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0% {background-color: black;}
+    50% {background-color: white;}
+    100% {background-color: black;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0% {background-color: black;}
+    50% {background-color: white;}
+    100% {background-color: black;}
+}
+
+.red {
+    background-color: #ffb3b3;
+}
+
+.orange {
+    background-color: #ffd9b3;
+}
+
+.yellow {
+    background-color: #ffffcc;
+}
+
+.green {
+    background-color: #b3ffd9;
+}
+
+.blue {
+    background-color: #b3d1ff;
+}
+
+.purple {
+    background-color: #c2c2f0;
+}
+
+.brown {
+    background-color: #ecd9c6;
+}
+
+.pink {
+    background-color: #ffe5ff;
+}
+
+.gray {
+    background-color: #e6e6e6;
+}

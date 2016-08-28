@@ -1,0 +1,155 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Giant's Causeway",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "Giant's Causeway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.511555, 55.240758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "An Pucan",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "An Pucan -- great baked bread"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.047413, 53.274600
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eyre square",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "Eyre square"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.049069, 53.274279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cliffs of Moher",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "Cliffs of Moher"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.432454, 52.973367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Derry",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "Derry"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.308791, 54.997363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ocho tapas bar portrush",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "Ocho tapas bar portrush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.654528, 55.207830
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dunlace Castle ",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "Dunlace Castle "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.579912, 55.210772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "French Village ",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "French Village "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.932423, 54.586324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Queen's university",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "Queen's university"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.935091, 54.584471
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title> Graphs! </title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body style="text-align:center; vertical-align: middle">
+
+		<div id="title" align="center">
+			<h1> AI Graph Algorithm Visualtization </h1>
+		</div>
+	
+		<div id="info">
+
+		</div>
+
+		<div id="quales_algorithm">
+			<p class="black">
+				<textarea id="graph" rows="3" cols="80"></textarea><br><br>
+				Choose an algorithm to run on your graph: 
+
+			 	How do you want to input your graph?<br>
+					<input type = "radio" id = "graph1" name = "graphType" value = "matrix">Matrix<br>
+				<input type = "radio" id = "graph2" name = "graphType" checked="checked" value = "coordinates">Coordinates<br>
+
+			</p>
+
+			<p class="black"> **Remember graphs are weighted** </p>
+
+			<select id="select">
+					<option value="dfs">Depth First Search</option>
+			    <option value="bfs">Breath First Search</option>
+			    <option value="prim">Prim's</option>
+			    <option value="kruskal">Kruskal's : not supported yet</option>
+			    <option value="dijkstra">Dijkstra's : not supported yet</option>
+			</select>
+			<button onclick="WhichAlgorithm()" id="submit">Draw!</button>
+		
+
+			<div id = "output">
+			
+			</div>
+
+			<p id="error" style='color: red;'> </p>
+			<div class="matrix">
+				<h3> Matrix Representation</h3>
+				<table> 
+					<tr class="top">
+						<td class="first"> </td> <td> a </td> <td> b </td> <td> c </td> 
+					</tr>
+					<tr>
+						<td class="first"> a </td> <td> 4 </td> <td> 0 </td> <td> 0 </td>
+					</tr>
+					<tr>
+						<td class="first"> b </td> <td> 3 </td> <td> 3 </td> <td> 0 </td>
+					</tr>
+					<tr>
+						<td class="first"> c </td> <td> 0 </td> <td> 0 </td> <td> 0 </td>
+					</tr>
+				</table>
+
+				<p class="gray">  &lt;<strong>number_of_nodes</strong>&gt; [&lt;<strong>names_of_nodes_comma_separates</strong>&gt;] {&lt;<strong>row_data</strong>&gt;} {} .....<br>
+				    3 [a,b,c] {4,0,0} {3,3,0} {0,0,0} <br>
+				</p>
+			</div>
+			<br>
+			<br>
+			<div class="coord">
+			<h3>Coordinates Representation </h3>	
+					<p class="gray"> 
+					Represent edges as: (&lt;<strong>from_node_name</strong>&gt;, &lt;<strong>to_node_name</strong>&gt;, &lt;<strong>weight</strong>&gt;) <br> OR <br> (&lt;<strong>from_node_name</strong>&gt;, &lt;<strong>to_node_name</strong>&gt;) <br><br>
+
+				    Total entry has the format:  <br>
+					&lt;<strong>number_of_nodes</strong>&gt; [&lt;<strong>names_of_nodes_comma_separates</strong>&gt;] (&lt;<strong>edge_data</strong>&gt;) () ...<br><br>
+
+				    graph represented above is: 
+					3 [a,b,c] (a,a,4) (b,a,3) (b,b,3)  <br>
+					and without edge weights: 
+					3 [a,b,c] (a,a) (b,a) (b,b) <br><br>		
+				</p> 
+			</div>
+	</div>
+	</body>
+
+	<!-- Deps -->
+	<script src="js/graphDefinition.js"> </script>
+	<script src="js/parseInput.js"> </script>
+	<script src="js/runAlgorithms.js"> </script>
+	<script src="js/stack.js"> </script>
+	<script src="js/queue.js"> </script>
+</html>

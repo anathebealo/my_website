@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Farsan|Lato|Galada|Abel|Tulpen+One|David+Libre" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"> </script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			$(".loader").fadeOut(2500);
+		})
+	</script>
+	<title id="recipe_title_name"> Recipes! </title>
+</head>
+
+<body>
+	<div class="loader">
+		
+	</div>
+	<div id="recipe_sidebar"> 
+	</div>
+	<div id="whole_recipe">
+		<div id="title">
+		</div>
+		<div id="information">
+		<span id="date"></span>
+		<span id="source"></span>
+		</div>
+		<hr>
+
+		<div id="photo">
+		</div>
+
+		<div id="recipe_text">
+			<div id="ingredients">
+			</div>
+
+			<div id="directions">
+			</div>
+		</div>
+	</div>
+	<div class="whitespace">
+	</div>
+
+	<script src="js/tag_script.js"> </script>
+	<script src="js/parseRecipes.js"> </script>
+
+</body>
+
+</html>

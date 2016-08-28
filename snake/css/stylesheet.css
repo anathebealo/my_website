@@ -1,0 +1,6 @@
+pre#board {
+    visibility: hidden;
+    border: 4px solid black;
+    display: inline-block;
+    font-size: 13px;
+}

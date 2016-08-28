@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>	
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<script src="js/controller.js"> </script>
+        <script src="js/model.js"> </script>
+        <script src="js/view.js"> </script>
+    </head>
+    <body>
+        <h1> Clear the Board!</h1>
+        <div class = "buttons"> 
+            <button id="startGame" type="button" onclick="initializeGame()"> Start Game! </button>
+            <button id="restartGame" type="button" onclick="restartGame()"> Restart </button> 
+        </div>
+        <br>
+        <div class="gameboard">
+            <div id="loser"> </div> <br>
+            <div id="board"> </div>
+        </div>  
+
+        <h4> Instructions </h4>
+        <p> 
+            Goal: clear all of the squares on the board <br>
+            Use the arrow keys to move up, down, left or right <br>
+            When you go in a direction, you will clear the number of blocks noted by the square in that direction <br>
+            You cannot go in a direction if the number in the square is larger than the distance to the nearest edge or empty space <br>
+
+        </p>
+    </body>
+</html>        

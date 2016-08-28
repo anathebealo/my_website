@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Farsan|Lato|Galada|Raleway|Tulpen+One|David+Libre|Grand+Hotel" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="css/tag_stylesheet.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"> </script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			$(".loader").fadeOut(2500);
+		})
+	</script>
+	<title id="recipe_title_name"> My Recipes! </title>
+</head>
+
+<body>
+	<div class="loader">
+		
+	</div>
+	<div class=header>
+	<h1> My Recipes </h1>
+		<!-- <img class="header" src="images/header.jpg"> -->
+	</div>
+	<div class="searchGroup">
+	  <label for="search">Search For Categories: </label>
+	  <input id="search"> <br>
+	  <button id="searchSubmit" onclick="show_tag()">Lookup Category</button>
+	  <button id="showAllSubmit" onclick="draw_tag_thumbnails()">Show All Categories</button>
+	  <button id="showAllSubmit" onclick="draw_all_tag_thumbnails()">Remove Categories</button>
+	</div>
+	<div id="buffer">
+
+	</div>
+	<div id="master_tag_thumbnail_container"> 
+	</div>
+
+	<script src="js/tag_script.js"></script>
+	<script>
+		get_setup(); 
+	</script>
+
+</body>
+
+</html>

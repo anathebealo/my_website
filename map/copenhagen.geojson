@@ -1,0 +1,460 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Amalienborg",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "This is Amalienborg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5930, 55.6841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "rosenborg slot",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "This is Rosenborg Slot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5773, 55.6858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Christiansborg",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "blue",
+        "popupContent": "This is Christiansborg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5805, 55.6762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nationalmuseet",
+        "marker-color": "#0000ff",
+        "marker-symbol": "museum",
+        "line": "red",
+        "popupContent": "This is the Nationalmuseet"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5747, 55.6746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tivoli",
+        "marker-color": "#008000",
+        "marker-symbol": "park",
+        "line": "blue",
+        "popupContent": "This is Tivoli"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5681, 55.6737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "workers museum",
+        "marker-color": "#0000ff",
+        "marker-symbol": "museum",
+        "line": "red",
+        "popupContent": "This is the workers musuem"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5704, 55.6847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Botanical Gardens",
+        "marker-color": "#008000",
+        "marker-symbol": "park",
+        "line": "red",
+        "popupContent": "This is the botanical gardens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+         12.5728, 55.6852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kronborg Slot",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "green",
+        "popupContent": "This is kronborg slot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.6212, 56.0390
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Frediksborg Slot",
+        "marker-color": "#0000ff",
+        "marker-symbol": "embassy",
+        "line": "green",
+        "popupContent": "This is Frediksborg Slot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3013, 55.9350
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Viking museum roslike",
+        "marker-color": "#0000ff",
+        "marker-symbol": "museum",
+        "line": "red",
+        "popupContent": "This is the Viking museum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0805, 55.6508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Carlsberg Brewery",
+        "marker-color": "#ff0000",
+        "marker-symbol": "bar",
+        "line": "green",
+        "popupContent": "This is Carlsberg Brewery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5326, 55.6674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "zoo",
+        "marker-color": "#008000",
+        "marker-symbol": "zoo",
+        "line": "green",
+        "popupContent": "This is the copenhagen zoo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.52139, 55.67278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cisterns",
+        "marker-color": "#008000",
+        "marker-symbol": "art-gallery",
+        "line": "green",
+        "popupContent": "This is the Cisterns"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.524528, 55.669528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Den bla planet",
+        "marker-color": "#0000ff",
+        "marker-symbol": "water",
+        "line": "green",
+        "popupContent": "This is Den bla planet"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.656798, 55.638046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beach bike rides",
+        "marker-color": "#0000ff",
+        "marker-symbol": "bicycle",
+        "line": "blue",
+        "popupContent": "This is where we rode bikes along the beach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.642282, 55.658199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stroget St",
+        "marker-color": "#ffffff",
+        "marker-symbol": "shop",
+        "line": "blue",
+        "popupContent": "This is stroget street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.580241, 55.679047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nyhavn",
+        "marker-color": "#0000ff",
+        "marker-symbol": "harbor",
+        "line": "yellow",
+        "popupContent": "This is Nyhavn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.590217, 55.679944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Christiania",
+        "marker-color": "#008000",
+        "marker-symbol": "pharmacy",
+        "line": "yellow",
+        "popupContent": "This is Christiania"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.597286, 55.673570
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kastellet",
+        "marker-color": "#008000",
+        "marker-symbol": "park",
+        "line": "green",
+        "popupContent": "This is Kastellet"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.594359, 55.691384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Little Mermaid",
+        "marker-color": "#ffff00",
+        "marker-symbol": "monument",
+        "line": "blue",
+        "popupContent": "This is the little mermaid"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.599208, 55.692828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal Tours",
+        "marker-color": "#0000ff",
+        "marker-symbol": "harbor",
+        "line": "blue",
+        "popupContent": "This is Canal Tours"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.580318, 55.677723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "First place we stayed",
+        "marker-color": "#ffff00",
+        "marker-symbol": "suitcase",
+        "line": "blue",
+        "popupContent": "This is the first place we stayed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.563997, 55.682999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Second place we stayed",
+        "marker-color": "#ffff00",
+        "marker-symbol": "suitcase",
+        "line": "red",
+        "popupContent": "This is second place we stayed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.621646, 55.658352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Best pizza place",
+        "marker-color": "#ff0000",
+        "marker-symbol": "restaurant",
+        "line": "orange",
+        "popupContent": "This is the best pizza place"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.589503, 55.680605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ice cream place 1",
+        "marker-color": "#ff0000",
+        "marker-symbol": "ice-cream",
+        "line": "red",
+        "popupContent": "This is Ice cream place 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.591635, 55.679821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ice cream place 2 ",
+        "marker-color": "#ff0000",
+        "marker-symbol": "ice-cream",
+        "line": "red",
+        "popupContent": "This is Ice cream place 2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.589226, 55.680418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Place to sit and eat pizza",
+        "marker-color": "#ff0000",
+        "marker-symbol": "theatre",
+        "line": "green",
+        "popupContent": "This is Place to sit and eat pizza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.594748, 55.679783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Street Food",
+        "marker-color": "#ff0000",
+        "marker-symbol": "restaurant",
+        "line": "red",
+        "popupContent": "This is street food"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.598212, 55.679369
+        ]
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,42 @@
+
+<meta charset="utf-8">
+
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+		<title>Hash Table Game</title>
+	</head>
+
+	<body>
+		<h1>HASH TABLE GAME</h1>
+		<h3 class="probingName">Type of Probing: </h3>
+		<!-- <select id="type_of_table">
+			<option value="Linear Probing">Linear Probing</option> 
+		  	<option value="Double Hashing" selected>Double Hashing</option>
+		  	<option value="Separate Chaining">Separate Chaining</option>
+		</select> -->
+
+		<div id="table_info">
+		</div>
+
+		<!-- <div id="instructions">
+			<p>Click to make a new hash table.</p>
+		</div> -->
+	  <h1 id="probe"> </h1>
+		<h1 id="nextRandom"> </h1>
+    <h1 id="hashFunc"> </h1>
+		<div id="table"> </div>
+
+		<!-- <div id="winnerscircle"> </div> -->
+		<button name="random" onclick="main()">Make Hash Table</button>
+	</body>
+	<script src="js/hash_tables_with_classes.js" charset="utf-8"></script>
+<script src="js/double_hash.js" charset="utf-8"> </script>
+<script src="js/separate_chaining.js" charset="utf-8"> </script>
+<script src="js/linear_probing.js" charset="utf-8"> </script>
+</html>

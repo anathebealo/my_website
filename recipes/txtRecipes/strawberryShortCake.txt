@@ -1,0 +1,29 @@
+title
+Strawberry Shortcake
+date
+8/01/16
+source
+Food Network
+photo, 1
+images/strawberryShortCake.jpg
+ingredients
+3,Shortcake 7,Whipped-Cream 3,Fruit 3
+2,cups all-purpose flour
+2,tsp baking powder
+1/4,tsp baking soda
+2,tbsp sugar
+3/4,tsp salt
+1,cup heavy cream
+1/2,cup half and half
+1 1/2,cup heavy cream
+3,tsp sugar
+1,tsp vanilla extract
+1,package strawberries
+2,diced mangos
+3,tsp sugar
+directions
+For the shortcake: Preheat oven to 400 degrees. Sift together flour, baking powder, baking soda, sugar and salt. Add creams and mix until just combined. Place mixture onto cookie sheet in 6 even blobs. Bake until golden (about 18-20 minutes).
+For the whipped cream: Add all ingredients to food processor. Mix until cream is at desired 
+texture (about 2 minutes).
+For the fruit: mix fruits together in a bowl. Stir in sugar. Best to let this sit for at least an hour before eating as the sugar will pull juices from the fruits.
+**Can use any types of fruit you would like -- I just happened to have strawberries and mangos in my kitchen.

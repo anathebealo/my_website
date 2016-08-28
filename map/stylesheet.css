@@ -1,0 +1,27 @@
+body { 
+	margin:0;
+	padding:0; 
+}
+
+h1 {
+	font-family: 'Lora', serif;
+	text-align: center;
+}
+
+ol {
+	font-family: 'Lato', sans-serif;
+}
+
+.map {
+	display: block;
+	width: 100%;
+	height: 750px;
+	-webkit-transition: height linear 2s;
+}
+
+#map-cluster-copenhagen { 
+	width:100%; 
+	height: 100% !important;
+	-webkit-transition: height linear 2s;
+}
+

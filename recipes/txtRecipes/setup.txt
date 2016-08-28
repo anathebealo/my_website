@@ -1,0 +1,52 @@
+recipes 14
+chocolateCake 1
+No-flour Chocolate Cake
+Dessert
+coconutSoup 2
+Burmese Chicken Soup
+Dinner
+Curry
+curry 2
+Spicy Coconut Curry
+Dinner
+Curry
+fruitTart 2
+Fresh Fruit Tart
+Dessert
+Fruit
+indianPudding 1
+Indian Pudding
+Dessert
+lemonBars 2
+Love Lemon Bars
+Dessert
+Fruit
+chocolateSauce 2
+Hot Fudge Sauce
+Dessert
+Sauce
+alfredo 2
+Alfredo Sauce
+Dinner
+Sauce
+blueberryMuffins 2
+Blueberry Muffins
+Breakfast
+Fruit
+strawberryShortCake 2
+Strawberry Shortcake
+Dessert
+Fruit
+shortBread 1
+Shortbread
+Dessert
+veggieDip 1
+Vegetable Dip
+Snack
+pesto 1
+Pesto
+Sauce
+pastaSalad 2
+Caprese Pasta Salad
+Pasta
+Dinner

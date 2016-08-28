@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Farsan|Lato|Pacifico|Abel|Tulpen+One|Dancing+Script|David+Libre" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"> </script>
+	<title id="buttons"> Ana Bealo's Homepage </title>
+</head>
+
+<body>
+	<div class="setwidth">
+		<div class="container">
+			<div>
+				<img src="css/me.jpg"> <h1> Ana Bealo </h1>
+			</div>
+			<div id="buttons">
+		 		<button id="resume" class="green button" onclick="location.href='http://www.anabealo.com/resumes/abealo_resume_12_10_15.pdf'">Resume</button>
+		 		<button id="projects" class="green button" onclick="expand_projects()">Projects</button>
+		    	<button id="photography" class="green button" onclick="location.href='http://www.anabealo.com/photography/'">Photography</button>
+		    	<button id="recipes" class="green button" onclick="location.href='http://www.anabealo.com/recipes/'">Recipes</button>
+		    	<button id="about" class="green button" onclick="expand_about()">About</button>
+		    </div>
+	    </div>
+
+	    <div id="aboutdiv"> 
+	    </div>
+	    <div id="projectsdiv">
+		</div>
+    </div>
+	<script src="script.js"> </script>
+</body>
+</html>

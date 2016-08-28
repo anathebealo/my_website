@@ -1,0 +1,1128 @@
+  <DOCTYPE! html>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" type="text/css" href="css/dataStructCss.css">
+
+  <div class = "text" style="width:70%; margin-left:auto; margin-right:auto">
+  <body>
+    <h1 id="data-structures">Data Structures</h1>
+
+    <p><div class="toc">
+      <ul>
+        <li><a href="#what-is-a-data-structure">What is a Data Structure??? </a>
+          <li><a href="#linked-lists">Linked Lists</a></li>
+          <ul>
+            <li><a href="#lookup">Lookup</a></li>
+            <li><a href="#insertion">Insertion</a></li>
+            <li><a href="#deletion">Deletion</a></li>
+            <li><a href="#fullcode">Full Code</a></li>
+          </ul>
+          </li>
+          <li><a href="#doubley-linked-lists">Doubley Linked Lists</a></li>
+          <ul>
+            <li><a href="#DLlookup">Lookup</a></li>
+            <li><a href="#DLinsertion">Insertion</a></li>
+            <li><a href="#DLdeletion">Deletion</a></li>
+            <li><a href="#DLfullcode">Full Code</a></li>
+          </ul>
+          <li><a href="#stacks">Stacks</a></li>
+          <li><a href="#queues">Queues</a></li>
+          <li><a href="#heaps">Heaps</a></li>
+          <li><a href="#hash-tables">Hash Tables</a></li>
+          <li><a href="#binary-search-trees">Binary Search Trees</a></li>
+          <li><a href="#avl-trees">AVL Trees</a></li>
+            <ul>
+              <li><a href="#fenced-code-blocks">Fenced code blocks</a></li>
+              <li><a href="#footnotes">Footnotes</a></li>
+              <li><a href="#mathjax">MathJax</a></li>
+              <li><a href="#uml-diagrams">UML diagrams</a></li>
+            </ul>
+            </ul>
+          </div>
+        </p>
+
+        <h2 id="what-is-a-data-structure">What is a Data Structure??? </h2>
+
+        <p>Lets say we want to store a set of data in a program that we are writing… What is the best way to do it?</p>
+
+        <p>Unfortunately there is no <em>one</em> answer to this question, as there are many ways to store sets of data in most programming languages. A data structure is a particular way of organizing data in a program so that it can be used efficiently (an array is an example of a standard data structure). There are many types of data structures and depending on what you want to do, each has strengths and weaknesses . </p>
+
+        <h3 id="what-do-they-have-in-common">What do they have in common</h3>
+
+        <p>Each data structure has a way to <strong>insert</strong> new data, <strong>delete</strong> data, and <strong>lookup</strong> data it is holding. </p>
+
+        <hr>
+
+        <div class="linkedList">
+
+         <h1 class="linked-lists">Linked Lists</h1>
+
+          <p>A linked list is a series of nodes connected by pointers. A node is an object that is made up of two parts: a piece of data (what you want to store in the node) and a pointer to the next node in the list. A pointer is just a connection between two nodes that allows a user to traverse (move) down the list in order. You can think of a linked list as being a line of people facing forward, looking at the hair of the person in front of them. Each person has a name (a piece of data) and each person is looking at one other person (the pointer). </p>
+
+          <p>It is important to note that singly linked lists only have one pointer…this mean</p>
+
+          <p>A linked list data structure is defined by its head. The head is the only piece of information that one needs to know, because everything else in the list is being pointed to by another node. Similarly, we do not need to know everyone that is in line, as we can ask the first person who they are looking at, and then ask the second who they are looking at, and so on. After we ask each person sequentially who they are looking at, we can find the names of everyone in the line.</p>
+
+
+          <div class="minor">
+
+            <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedList</span> {</span>
+      <span class="hljs-keyword">public</span> Node head; 
+
+      <span class="hljs-keyword">public</span> <span class="hljs-title">Node</span>() {
+          head = <span class="hljs-keyword">new</span> Node(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>); 
+      } 
+   }</code></pre></div>
+
+          <p>There are many ways to organize data in lists. It can be alphabetical, in numerical order, randomly inserted, etc. However, for most purposed it is good to keep the data that you are storing organized using some ordering method. It would be very tedious to sort a list after it has already been created, so it is best to organize it as new pieces of data are inserted.</p>
+
+          <p>For our purposes, we will assume that our linked list is holding integers. It is important to note that linked lists can hold anything…strings, objects, arrays…anything! But, to keep our example simple, we will stick to basics. In addition to holding integers, we will make our linked list organize data as it is being put in. So when something is inserted into the list, we will put it in a proper place to keep it in numerical order (from smallest to biggest).</p>
+
+          <p>The first thing needed when creating a data strucutre is to make sure everything in the data structure is defined. The only thing not formally defined yet are nodes. To do this simply, we will name our class Node and each instance of it will contain a piece of data and a pointer to the next node. The constructor for our class will set the two node variables based on what is passed in as parameters. <br>
+          </p><div class="major">
+
+          <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> {</span>
+      <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> data; 
+      <span class="hljs-keyword">public</span> Node next; 
+
+      <span class="hljs-keyword">public</span> <span class="hljs-title">Node</span>(<span class="hljs-keyword">int</span> data, Node next) {
+          <span class="hljs-keyword">this</span>.data = data;   
+          <span class="hljs-keyword">this</span>.next = next; 
+      } 
+  }</code></pre>
+  </div>
+
+        <p>There are three functions we are concerned with in regards to any data structure: lookup, insertion, and deletion. What would happen if a new person stepped into the middle of the line? What about if someone left the line? How would we go down the line of people to figure out which one was named Zach?</p>
+
+        <h2 id="lookup">Lookup</h2>
+
+        <p>Lets say we want to see if someone in line is named Steve. When looking up Steve, we can ask the first person in line for their name, and if it is not Steve, ask the next person for their name, and so on. This will continue until we ask the last person for their name. If no one in line is named Steve, then we know that he is not in line.</p>
+
+        <p>Similarly, when looking up data in a linked list, we go to the first node and look at its data. If it is not the data that we are looking for, we can move forward to the next node. If we get to the end of the list and have not found the piece of data, then it is not in the list.</p>
+
+        <p>This method is easy to implement recursively. On the first call, we look to see if the data is contained in the head node. If not, if head.next is not null, then we can call Lookup on the next node, and start over. This will happen until there is no next node. If that is the case, then the data was not in any of the previous nodes, and must not be in the linked list.</p>
+
+        <p>To determine whether a node’s data is what we are looking for, we can implement a simple if statement:</p>
+
+        <div class="minor">
+
+          <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">if</span> (node.data == lookupData) 
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</code></pre></div>
+
+            <p>If it is not in that node, then we should see if there is a next node to look in. If so, we can return the result of calling lookup on it…otherwise we should return false.</p>
+
+            <div class="minor">
+
+              <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  if</span> (node.next != <span class="hljs-keyword">null</span> ) {
+      <span class="hljs-keyword">return</span> Lookup(node.next, lookupData); 
+  } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">//if no more nodes, return false</span>
+      Return <span class="hljs-keyword">false</span>;
+  } </code></pre>
+  </div>
+
+            <p>This is what the finished code should look like:</p>
+
+            <div class="major">
+
+              <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">lookup</span>(Node node, <span class="hljs-keyword">int</span> lookupData) {
+     <span class="hljs-comment">//if a node's data is what we are looking-up, then return true.</span>
+     <span class="hljs-keyword">if</span> (node.data == lookupData) {
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+        <span class="hljs-comment">//otherwise, if there is a next node, look it up in there.</span>
+     } <span class="hljs-keyword">else</span> {
+         <span class="hljs-keyword">if</span> (node.next.data != <span class="hljs-keyword">null</span> ) {
+             <span class="hljs-keyword">return</span> Lookup (node.next, lookupData); 
+         } <span class="hljs-keyword">else</span> { 
+             <span class="hljs-comment">//if no more nodes, return false</span>
+             Return <span class="hljs-keyword">false</span>; 
+         }
+     }
+  }</code></pre></div>
+
+     <h2 id="insertion">Insertion</h2>
+
+     <p>There are many schemas used to insert into a linked list, two common ones are inserting at the head of the list, and keeping the list sorted. For the code examples, we will assume that we are adding to a sorted list.</p>
+
+     <p>There are three places where you might want to insert a node into a list: the beginning, the middle and the end…</p>
+
+     <h3 id="the-beginning">The Beginning</h3>
+
+     <p>If we are inserting a node into the beginning of a linked list, we need to keep a few things in mind.</p>
+
+     <ul>
+      <li>If inserting into the head, we know that the piece of info will be smaller than the first node’s info (because we are keeping our list in numerical order)</li>
+    </ul>
+
+    <div class="minor">
+
+      <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  if</span> ( info &lt;= head.next.data ) </code></pre></div>
+
+      <ul>
+        <li>Because no nodes point to the head node, we do not need to worry about changing any pointers. We must first create a new node that will become the head of the list, which points to the old head. <br>
+          It needs to point to the old head.next node</li>
+        </ul>
+
+        <div class="minor">
+
+          <pre class="prettyprint"><code class="language-java hljs "> newNode = <span class="hljs-keyword">new</span> Node(info, head.next);</code></pre></div>
+
+          <ul>
+            <li>The head must be redefined <br>
+            </li>
+          </ul>
+          <div class="minor">
+            <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  this</span>.head.next = newNode; </code></pre></div>
+
+           <p>And so the final code for inserting at the beginning of a list looks like this:</p>
+
+            <div class="major">
+
+              <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-comment">  //if needs to go at the beginning of a list </span>
+  <span class="hljs-keyword">if</span>( info &lt;= head.next.data ) {
+      newNode = <span class="hljs-keyword">new</span> Node(info, head.next); 
+      <span class="hljs-keyword">this</span>.head.next = newNode;
+  }</code></pre></div>
+
+              <h3 id="the-middle">The middle</h3>
+
+              <p>If we are inserting into the middle, the person steps between two others in line. Someone can see the back of their head, and the inserted person can see the back of someone else’s head.</p>
+
+              <p>So, we need to keep a few things in mind:</p>
+
+              <ul>
+                <li>We should have a temporary variable to keep our place in line</li>
+              </ul>
+
+              <div class="minor">
+
+                <pre class="prettyprint"><code class="language-java hljs "> Node temp = <span class="hljs-keyword">this</span>.head.next; </code></pre></div>
+
+                <ul>
+                  <li>The data being inserted is less than temp.next.data and greater than temp.data.</li>
+                </ul>
+
+                <div class="minor">
+
+                  <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  if</span>( info &lt; temp.next.data &amp;&amp; info &gt; temp.data ) </code></pre></div>
+
+                  <ul>
+                    <li>We create a new node that points to temp.next.</li>
+                  </ul>
+
+                  <div class="minor">
+
+                    <pre class="prettyprint"><code class="language-java hljs "> Node newNode = <span class="hljs-keyword">new</span> Node(info, temp.next);  </code></pre></div>
+
+                    <ul>
+                      <li>Change the existing next pointer to point to the newly made node.</li>
+                    </ul>
+
+                    <div class="major">
+
+                      <pre class="prettyprint"><code class="language-java hljs ">  temp.next = newNode;   
+  Node temp = <span class="hljs-keyword">this</span>.head.next;
+  <span class="hljs-keyword">if</span>( info &lt; temp.next.data &amp;&amp; info &gt; temp.data ) {
+      newNode = <span class="hljs-keyword">new</span> Node(info, temp.next); 
+      temp.next = newNode; 
+  }</code></pre></div>
+
+                      <h3 id="the-end">The End</h3>
+
+                      <p>When inserting into the end of a line, the last person does not look at anyone, and the person who used to be at the end now looks at the back of their head.When adding to the end of a linked list keep a few things in mind:</p>
+
+                      <p>It does not point to any nodes</p>
+
+                      <div class="major">
+
+                        <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-comment">  //if last node</span>
+  newNode = <span class="hljs-keyword">new</span> Node(info, <span class="hljs-keyword">null</span>); 
+  temp.next = newNode; </code></pre></div>
+
+                          <h3 id="final-insertion-code">Final Insertion Code</h3>
+
+                          <p>When putting it all together, note that we need to make sure that what we are inserting is not already in the linked list. To do this, we only continue if lookup(info) returns false.In addition, we surround the ‘middle insertion section’ with a while loop to go through each middle node until we arrive at the last node in the list.</p>
+
+                          <div class="final">
+
+                           <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span>(<span class="hljs-keyword">int</span> info, Node head) {
+     Node newNode; 
+
+     <span class="hljs-keyword">if</span>( !lookup(info) ) {
+         <span class="hljs-comment">//if needs to go at the beginning of a list</span>
+         <span class="hljs-keyword">if</span> ( info &lt;= head.next.data ) {
+             newNode = <span class="hljs-keyword">new</span> Node(info, head.next); 
+             <span class="hljs-keyword">this</span>.head.next = newNode;
+         }
+
+         <span class="hljs-comment">//if needs to go in the middle of the list</span>
+         Node temp = <span class="hljs-keyword">this</span>.head.next;
+
+         <span class="hljs-keyword">while</span> ( temp.next.data != <span class="hljs-keyword">null</span> ) {
+             <span class="hljs-keyword">if</span>( info &lt; temp.next.data &amp;&amp; info &gt; temp.data ) {
+                 newNode = <span class="hljs-keyword">new</span> Node(info, temp.next); 
+                 temp.next = newNode; 
+             }
+             <span class="hljs-keyword">else</span> {
+                 temp = temp.next(); 
+             }
+         }
+
+         <span class="hljs-comment">//if last node</span>
+         newNode = <span class="hljs-keyword">new</span> Node(info, <span class="hljs-keyword">null</span>); 
+         temp.next = newNode; 
+     }
+  }</code></pre></div>
+
+                 <h2 id="deletion">Deletion:</h2>
+
+                 <p>When deleting, we can be deleting from one of three places: the head, from the middle, or from the end. Each has a slightly different way of thinking…</p>
+
+                 <ul>
+                  <li>From the head: redefine the head as head.next</li>
+                  <li>From the middle: reset the pointer of the one before it</li>
+                  <li>From the end: set node to null</li>
+                </ul>
+
+                <p>Why don’t we need to delete the node from the middle or the head?</p>
+
+                <p>We do not need to delete the middle nodes or the head node because through changing the pointers, we make it impossible for the ‘deleted’ nodes to ever be reached by traversing the list. Of course, when dealing with large linked lists, deleting the nodes will save space, but for use on small projects it is a negligible amount of data.</p>
+
+                <h3 id="deleting-head-node">Deleting Head Node</h3>
+
+                <p>If we are deleting the head of the list, then we just need to return the list without the original head on it.</p>
+
+                <div class="minor">
+
+                  <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-comment">  //if deleting beginning node </span>
+  <span class="hljs-keyword">if</span> ( info == <span class="hljs-keyword">this</span>.head.next.data )
+      head.next = head.next.next; </code></pre></div>
+
+                    <h3 id="deleting-middle-node">Deleting Middle Node</h3>
+
+                    <p>Deleting a middle node is only slightly more complicated. Because we do not want to reach the soon-to-be-deleted node when traversing the linked list, we must first re-set the next-node pointer of the node before it to be the one after it.</p>
+
+                    <div class="minor">
+
+                      <pre class="prettyprint"><code class="language-java hljs "> Node temp = head.next; </code></pre></div>
+
+                      <p>The next step is to simply return the original head of the list.</p>
+
+                      <div class="minor">
+
+                        <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  if</span> ( info == temp.next.data ) {
+      temp.next == temp.next.next;  
+  }</code></pre></div>
+
+                        <h3 id="deleting-last-node">Deleting Last Node</h3>
+
+                        <p>The last thing to check is whether we are deleting the last node of a linked list. This is probably the simplest of the three cases. One must simply set the last node to be null, and then return the original head.</p>
+
+                        <div class="minor">
+
+                         <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-comment">  //if last node</span>
+  temp.next = <span class="hljs-keyword">null</span>;   </code></pre></div>
+
+                           <h3 id="final-deletion-code">Final Deletion Code</h3>
+
+                            <p>As we did in the insertion method, when creating the full delete method, it is important to first check that the information you wish to delete from the list is actually contained in the list. To do so, we encompass the code in an if statement! At the end we will also return the original head node.</p>
+
+                            <div class="final">
+
+                              <pre class="prettyprint"><code class="language-java hljs "> <span class="hljs-keyword"> public</span> Node <span class="hljs-title">delete</span>(<span class="hljs-keyword">int</span> deleteData, Node head) {
+      Node originalHead = head; 
+      <span class="hljs-comment">// must be in list!</span>
+
+      <span class="hljs-keyword">if</span>( !lookup(deleteData) ) {
+          <span class="hljs-comment">//if deleting beginning node</span>
+          <span class="hljs-keyword">if</span> ( info == <span class="hljs-keyword">this</span>.head.next.data )
+              head.next = head.next.next; 
+
+          <span class="hljs-comment">//if deleting a middle node</span>
+          Node temp = <span class="hljs-keyword">this</span>.head.next; 
+          <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) {
+              <span class="hljs-keyword">if</span> ( info == temp.next.data ) {
+                  temp.next == temp.next.next;  
+              }
+              <span class="hljs-keyword">else</span> {
+                  temp = temp.next();
+              }
+          }
+
+          <span class="hljs-comment">//if last node</span>
+          temp.next = <span class="hljs-keyword">null</span>; 
+      }
+  }</code></pre></div>
+
+                      <h2 id="fullcode">Final Class for Linked Lists</h2>
+
+                      <p>I hope that everything discussed above makes sense. Below you will find all of the parts of code put together to make a basic implementation of a Singly Linked List class.</p>
+
+                      <div class="final">
+
+                        <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">  public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> {</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> data; 
+        <span class="hljs-keyword">public</span> Node next; 
+
+        <span class="hljs-keyword">public</span> <span class="hljs-title">Node</span>(<span class="hljs-keyword">int</span> data, Node next) {
+            <span class="hljs-keyword">this</span>.data = data;   
+            <span class="hljs-keyword">this</span>.next = next; 
+        } 
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedList</span> {</span>
+        <span class="hljs-keyword">public</span> Node head; 
+
+        <span class="hljs-keyword">public</span> <span class="hljs-title">Node</span>() {
+            head = <span class="hljs-keyword">new</span> Node(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>); 
+        } 
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">lookup</span>(Node node, <span class="hljs-keyword">int</span> lookupData) {
+            <span class="hljs-comment">//if a node's data is what we are looking-up, then return true.</span>
+            <span class="hljs-keyword">if</span> (node.data == lookupData) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+               <span class="hljs-comment">//otherwise, if there is a next node, look it up in there.</span>
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">if</span> (node.next.data != <span class="hljs-keyword">null</span> ) {
+                    <span class="hljs-keyword">return</span> Lookup (node.next, lookupData); 
+                } <span class="hljs-keyword">else</span> { 
+                    <span class="hljs-comment">//if no more nodes, return false</span>
+                    Return <span class="hljs-keyword">false</span>; 
+                }
+            }
+        }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span>(<span class="hljs-keyword">int</span> info, Node head) {
+            Node newNode; 
+
+            <span class="hljs-keyword">if</span>( !lookup(info) ) {
+                <span class="hljs-comment">//if needs to go at the beginning of a list</span>
+                <span class="hljs-keyword">if</span> ( info &lt;= head.next.data ) {
+                    newNode = <span class="hljs-keyword">new</span> Node(info, head.next); 
+                    <span class="hljs-keyword">this</span>.head.next = newNode;
+                }
+
+                <span class="hljs-comment">//if needs to go in the middle of the list</span>
+                Node temp = <span class="hljs-keyword">this</span>.head.next;
+
+                <span class="hljs-keyword">while</span> ( temp.next.data != <span class="hljs-keyword">null</span> ) {
+                    <span class="hljs-keyword">if</span>( info &lt; temp.next.data &amp;&amp; info &gt; temp.data ) {
+                        newNode = <span class="hljs-keyword">new</span> Node(info, temp.next); 
+                        temp.next = newNode; 
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        temp = temp.next(); 
+                    }
+                }
+
+                <span class="hljs-comment">//if last node</span>
+                newNode = <span class="hljs-keyword">new</span> Node(info, <span class="hljs-keyword">null</span>); 
+                temp.next = newNode; 
+            }
+        }
+
+        <span class="hljs-keyword">public</span> Node <span class="hljs-title">delete</span>(<span class="hljs-keyword">int</span> deleteData, Node head) {
+            Node originalHead = head; 
+            <span class="hljs-comment">// must be in list!</span>
+
+            <span class="hljs-keyword">if</span>( lookup(deleteData) ) {
+                <span class="hljs-comment">//if deleting beginning node</span>
+                <span class="hljs-keyword">if</span> ( info == <span class="hljs-keyword">this</span>.head.next.data )
+                    head.next = head.next.next; 
+
+                <span class="hljs-comment">//if deleting a middle node</span>
+                Node temp = <span class="hljs-keyword">this</span>.head.next; 
+                <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) {
+                    <span class="hljs-keyword">if</span> ( info == temp.next.data ) {
+                        temp.next == temp.next.next;  
+                    }
+                    <span class="hljs-keyword">else</span> {
+                        temp = temp.next();
+                    }
+                }
+
+                <span class="hljs-comment">//if last node</span>
+                temp.next = <span class="hljs-keyword">null</span>; 
+            }
+        }
+    }</code></pre></div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="doubleLists">
+
+  <h1 id="doubley-linked-lists">Doubley Linked Lists</h1>
+
+  <p>A doubly linked list a is a list-like data structure that is made of a series of nodes. The nodes are connected by pointers between them that allows a program to traverse down the list either backwards or forwards. Each node contains a piece of data and two pointers. One of the pointers points towards the node before it, and the other points to the node ahead of it. Doubly linked lists are extremely similar to singly linked lists …the only difference being that doubly linked lists have two pointers – pointing forwards and backwards – whereas singly linked lists only have one pointing forwards. This allows the added benefit of traversing backwards in a doubly linked lists where a singly linked one can only go forwards.</p>
+
+  <p>The class code for a doubly linked list is almost exactly the same as a singly linked one, except I like to define mine as having both a header and a footer. This allows someone to reference both ends of it with no problem.</p>
+
+  <div class="final"></div>
+
+  <pre class="prettyprint"><code class="language-java hljs ">    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DoubleLinkedList</span> {</span>
+        <span class="hljs-keyword">public</span> Node head; 
+        <span class="hljs-keyword">public</span> Node foot; 
+
+        <span class="hljs-keyword">public</span> <span class="hljs-title">DoubleLinkedList</span>() {
+            head = <span class="hljs-keyword">new</span> Node(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, foot); 
+            foot = <span class="hljs-keyword">new</span> Node(<span class="hljs-keyword">null</span>, head, <span class="hljs-keyword">null</span>);  
+        } 
+    }</code></pre>
+
+<p>The class code for a Node is almost exactly the same as for a linked list’s Node class, but it has a prev pointer. This points to the node behind it in the list.</p>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> {</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> data; 
+        <span class="hljs-keyword">public</span> Node next; 
+        <span class="hljs-keyword">public</span> Node prev; 
+
+        <span class="hljs-keyword">public</span> <span class="hljs-title">Node</span>(<span class="hljs-keyword">int</span> data, Node prev, Node next) {
+            <span class="hljs-keyword">this</span>.data = data;   
+            <span class="hljs-keyword">this</span>.next = next; 
+            <span class="hljs-keyword">this</span>.prev = prev; 
+        } 
+    }</code></pre>
+
+<p>As stated in the last tutorial, the methods we need to write for any data structure are: insertion, deletion, and lookup.</p>
+
+<h2 id="DLlookup">Lookup</h2>
+
+When looking up something inside of a doubly linked list, you must only traverse the list and compare each element with what you are looking up.
+
+<ul><li>Must make sure that the list is not empty.</li></ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">   <span class="hljs-keyword">if</span>( <span class="hljs-keyword">this</span>.head.next == <span class="hljs-keyword">this</span>.foot ) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+    }  </code></pre>
+
+
+<ul>
+  <li>You must make a temporary node to traverse the list with</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">   Node temp = <span class="hljs-keyword">this</span>.head.next;  </code></pre>
+
+<ul>
+  <li>Everything must be contained inside a while loop. The loop make sure that you do not exceed the length of the list</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">   <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> )  </code></pre>
+
+<ul><li>Compare each node’s data with the thing you are looking up. If they are the same, then lookup should return true.</li></ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">   <span class="hljs-keyword">if</span>( temp.data == data ) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+   } </code></pre>
+
+<h3 id="full-code">Full Code</h3>
+
+<p>The full code for looking up data:</p>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">lookup</span>(<span class="hljs-keyword">int</span> info) {
+        <span class="hljs-keyword">if</span>( <span class="hljs-keyword">this</span>.head.next == <span class="hljs-keyword">this</span>.foot ) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+        }
+
+        Node temp = <span class="hljs-keyword">this</span>.head.next;
+        <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) {
+            <span class="hljs-keyword">if</span>( temp.data == info ) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+            } <span class="hljs-keyword">else</span> {
+                temp = temp.next; 
+            }
+        }
+        <span class="hljs-keyword">if</span>( temp.data == info ) 
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+        <span class="hljs-keyword">else</span> 
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+        }
+    }</code></pre>
+
+<h2 id="DLinsertion">Insertion</h2>
+
+<p>When inserting into a doubly linked list, we want to make sure that the data that we are adding are inserted in an organized mannor. Therefore, it is important to add to a proper spot in the list. To keep this example simple, we will be using ints as the data types stored. There are four places we can place the new nodes…</p>
+
+<ol>
+  <li>Into an empty list</li>
+  <li>The beginning</li>
+  <li>The middle</li>
+  <li>The end</li>
+  <li>An empty list</li>
+</ol>
+
+<p>When inserting into an empty list, there are no nodes other than the head and the foot.</p>
+
+<ul>
+  <li>If the list is empty, then head.next points to foot and foot.prev points to the head.</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">   <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.head.next == foot &amp;&amp; <span class="hljs-keyword">this</span>.foot.prev == head)  </code></pre>
+
+<ul>
+  <li>The new node will point to both the head and the tail.</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">   newNode = <span class="hljs-keyword">new</span> Node(info, <span class="hljs-keyword">this</span>.head, <span class="hljs-keyword">this</span>.foot); </code></pre>
+
+<ul>
+  <li>We must change the next node of the head and the prev node of the foot.</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">   <span class="hljs-keyword">this</span>.head.next = newNode; 
+   <span class="hljs-keyword">this</span>.foot.prev = newNode;  </code></pre>
+
+  <p>The full code for inserting into an empty list:</p>
+
+  <div class="final"></div><pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.head.next == foot &amp;&amp; <span class="hljs-keyword">this</span>.foot.prev == head) {
+        newNode = <span class="hljs-keyword">new</span> Node(info, <span class="hljs-keyword">this</span>.head, <span class="hljs-keyword">this</span>.foot);
+        <span class="hljs-keyword">this</span>.head.next = newNode; 
+        <span class="hljs-keyword">this</span>.foot.prev = newNode;
+     } </code></pre>
+  
+  <h3 id="the-beginning-1">The beginning</h3>
+
+  <p>When inserting into the beginning, there are a few things to keep in mind:</p>
+
+  <ul>
+    <li>The data inside the node is smaller than that of the head</li>
+  </ul>
+
+  <div class="final"></div>
+
+  <pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">if</span>( insertData &lt; head.next.data )        </code></pre>
+
+  <ul>
+    <li>It should have a next pointer to the old head, and a null prev pointer</li>
+  </ul>
+
+  <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     newNode = <span class="hljs-keyword">new</span> Node(insertData, head, head.next);         </code></pre>
+
+  <ul>
+    <li>The old head’s prev pointer points to the new node.</li>
+  </ul>
+
+  <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     head.next.prev = newNode;         </code></pre>
+
+  <ul>
+    <li>The doubly linked lits’s head definition must change to point to the new node.</li>
+  </ul>
+
+  <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     head.next = newNode;           </code></pre>
+
+  <p>The full code for inserting at the beginning:</p>
+
+  <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">    <span class="hljs-keyword">if</span>( insertData &lt; head.data ) {
+      newNode = <span class="hljs-keyword">new</span> Node(insertData, head, head.next);
+      head.next.prev = newNode;
+      head.next = newNode; 
+    }</code></pre>
+
+  <h3 id="the-middle">The Middle</h3>
+
+  <p>When inserting into the middle, there are just as many considerations to take as there were with the beginning! Make sure everyhing is done in the correct order so you do not lose pointers!</p>
+
+  <ul>
+    <li>temp.next.data cannot be null, else it is the foot of the list and we are inserting at the end.</li>
+  </ul>
+
+  <div class="final"></div>
+
+  <pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) { ... }         </code></pre>
+
+  <ul>
+    <li>We do not want to lose where the head was, so we will create a temporary Node to save where we are in the list  <br>
+      traversal.</li>
+    </ul>
+
+    <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     Node temp = head.next;         </code></pre>
+
+    <ul>
+      <li>The data inside the nod- e is smaller than that of the of the node after it and smaller than the one before it</li>
+    </ul>
+
+    <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">if</span>( insertData &gt; temp.data &amp;&amp; insertData &lt;= temp.next.data )        </code></pre>
+
+    <ul>
+      <li>It should have a next pointer to the temp, and a pointer to temp.next</li>
+    </ul>
+
+    <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     newNode = <span class="hljs-keyword">new</span> Node(insertData, temp, temp.next);         </code></pre>
+
+    <ul>
+      <li>Temp’s next pointer needs to change</li>
+    </ul>
+
+    <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     temp.next = newNode;         </code></pre>
+
+    <ul>
+      <li>The prev pointer of newNode.next needs to change</li>
+    </ul>
+
+    <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     newNode.next.prev = newNode;           </code></pre>
+
+    <ul>
+      <li>The full code for inserting in the middle:</li>
+    </ul>
+
+    <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">    Node temp = head.next;
+
+    <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> )
+        <span class="hljs-keyword">if</span>( insertData &gt; temp.data &amp;&amp; insertData &lt;= temp.next.data ) {
+            newNode = <span class="hljs-keyword">new</span> Node(insertData, temp, temp.next);
+            temp.next = newNode; 
+            newNode.next.prev = newNode; 
+        }
+    }</code></pre>
+
+  <h3 id="the-end">The end</h3>
+
+  <p>When inserting into the end, the following considerations must be taken into account!</p>
+
+  <ul>
+    <li>Define the next of the inserted node to be the foot and define the prev of the inserted node to be foot.prev.</li>
+  </ul>
+
+  <div class="final"></div>
+
+  <pre class="prettyprint"><code class="language-java hljs ">     newNode = <span class="hljs-keyword">new</span> Node(info, <span class="hljs-keyword">this</span>.foot.prev, <span class="hljs-keyword">this</span>.foot);         </code></pre>
+
+  <ul>
+    <li>Define the prev of the foot to be newNode</li>
+  </ul>
+
+  <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">this</span>.foot.prev = newNode;         </code></pre>
+
+  <ul>
+    <li>The next pointer of temp needs to change</li>
+  </ul>
+
+  <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     newNode.prev.next = newNode;           </code></pre>
+
+  <ul>
+    <li>The full code for inserting in the end:</li>
+  </ul>
+
+  <div class="final"></div> <pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">insert</span>(<span class="hljs-keyword">int</span> info) {
+        <span class="hljs-keyword">if</span>( !lookup(info) ) {
+            <span class="hljs-comment">//inserting into the beginning</span>
+            <span class="hljs-keyword">if</span>( info &lt; head.data ) {
+                Node newNode = <span class="hljs-keyword">new</span> Node(info, head, head.next);
+                head.next.prev = newNode;
+                head.next = newNode; 
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+            }
+
+            Node temp = <span class="hljs-keyword">this</span>.head.next; 
+            <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) {
+                <span class="hljs-comment">//inserting into the middle</span>
+                <span class="hljs-keyword">if</span>(info &gt; temp.data &amp;&amp; info &lt;= temp.next.data){
+                    Node newNode = <span class="hljs-keyword">new</span> Node(info, temp, temp.next);
+                    temp.next = newNode; 
+                    newNode.next.prev = newNode; 
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+                } <span class="hljs-keyword">else</span> {
+                    temp = temp.next;
+                }
+            }
+
+            <span class="hljs-comment">//inserting into the end</span>
+            newNode = <span class="hljs-keyword">new</span> Node(info, <span class="hljs-keyword">this</span>.foot.prev, <span class="hljs-keyword">this</span>.foot);
+            <span class="hljs-keyword">this</span>.foot.prev = newNode;
+            newNode.prev.next = newNode; 
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+    }</code></pre>
+
+<h2 id="DLdeletion">Deletion</h2>
+
+<p>Deleting from a doubly linked list is very similar to deleting from a singly linked list, but it requires that the prev pointers are changed in addition to changing the next pointers. There are four ways to delete something:</p>
+
+<ol>
+  <li>From the beginning</li>
+  <li>From the middle</li>
+  <li>From the end</li>
+  <li>The beginning</li>
+</ol>
+
+<h3 id="the-beginning">The Beginning</h3>
+
+<p>When deleting from the beginning there are only a couple things to keep in mind..</p>
+
+<ul>
+  <li>The data being deleted is smaller than head.next.data</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">if</span>( info == <span class="hljs-keyword">this</span>.head.next.data )         </code></pre>
+
+<ul>
+  <li>head’s next pointer must be changed</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">this</span>.head.next = <span class="hljs-keyword">this</span>.head.next.next;         </code></pre>
+
+<ul>
+  <li>head.next.prev’s pointer must be changed</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     head.next.prev = head;         </code></pre>
+
+<p>Deleting from the beginning is small, but is as follows:</p>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">if</span>( info == <span class="hljs-keyword">this</span>.head.next.data ) {
+        <span class="hljs-keyword">this</span>.head.next = <span class="hljs-keyword">this</span>.head.next.next;
+        head.next.prev = head;
+     }        </code></pre>
+
+<h3 id="the-middle-1">The Middle</h3>
+
+<p>When deleting from the middle, it is exactly like deleting from the head, but a temp variable must be created to traverse the list properly.</p>
+
+<ul>
+  <li>Temp must be created</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     Node temp = <span class="hljs-keyword">this</span>.head.next;          </code></pre>
+<ul>
+ <li>The data being deleted is greater than temp.next.data and less than temp.data</li>
+</ul>
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">if</span>( info == temp.next.data )         </code></pre>
+
+<ul>
+  <li>temp’s next pointer must be changed</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     temp.next = temp.next.next;         </code></pre>
+
+<ul>
+  <li>the prev pointer of temp.next.next must be changed</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     temp.next.next.prev = temp;       </code></pre>
+
+<ul>
+  <li>Deleting from the beginning is small, but is as follows:</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">    Node temp = <span class="hljs-keyword">this</span>.head.next; 
+    <span class="hljs-keyword">if</span>( info == temp.next.data ) {
+        temp.next = temp.next.next;
+        temp.next.next.prev = temp;
+    }        </code></pre>
+
+<h3 id="the-end-1">The End</h3>
+
+<p>When deleting from the end, it is (not suprisingly) like deleting from any other part of the list. One must just take care to change the foot’s pointers.</p>
+
+<ul>
+  <li>temp.next must be set to be the foot</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     temp.next = <span class="hljs-keyword">this</span>.foot;         </code></pre>
+
+<ul>
+  <li>foot’s prev pointer must be set to temp.</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">     <span class="hljs-keyword">this</span>.foot.prev = temp;         </code></pre>
+
+<ul>
+  <li>Deleting from the beginning is small, but is as follows:</li>
+</ul>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs ">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">delete</span>(<span class="hljs-keyword">int</span> info) {
+        <span class="hljs-keyword">if</span>( lookup(info) ) {
+            <span class="hljs-comment">//deleting from the beginning</span>
+            <span class="hljs-keyword">if</span>( info == <span class="hljs-keyword">this</span>.head.next.data ) {
+                <span class="hljs-keyword">this</span>.head.next = <span class="hljs-keyword">this</span>.head.next.next;
+                head.next.prev = head;
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+
+            Node temp = <span class="hljs-keyword">this</span>.head.next; 
+            <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) {
+                <span class="hljs-comment">//deleting from the middle</span>
+                <span class="hljs-keyword">if</span>( info == temp.next.data ) {
+                    temp.next = temp.next.next;
+                    temp.next.next.prev = temp;
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+                } <span class="hljs-keyword">else</span> {
+                    temp = temp.next; 
+                }   
+            }
+
+            <span class="hljs-comment">//deleting from the end</span>
+            temp.next = <span class="hljs-keyword">this</span>.foot;
+            <span class="hljs-keyword">this</span>.foot.prev = temp;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+    }</code></pre>
+
+
+<h2 id="DLfullcode">Full Class for Doubly Linked List</h2>
+
+<div class="final"></div>
+
+<pre class="prettyprint"><code class="language-java hljs "> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> {</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> data; 
+        <span class="hljs-keyword">public</span> Node next; 
+        <span class="hljs-keyword">public</span> Node prev; 
+
+        <span class="hljs-keyword">public</span> <span class="hljs-title">Node</span>(<span class="hljs-keyword">int</span> data, Node prev, Node next) {
+            <span class="hljs-keyword">this</span>.data = data;   
+            <span class="hljs-keyword">this</span>.next = next; 
+            <span class="hljs-keyword">this</span>.prev = prev; 
+        } 
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DoubleLinkedList</span> {</span>
+        <span class="hljs-keyword">public</span> Node head; 
+        <span class="hljs-keyword">public</span> Node foot; 
+
+        <span class="hljs-keyword">public</span> <span class="hljs-title">DoubleLinkedList</span>() {
+            head = <span class="hljs-keyword">new</span> Node(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, foot); 
+            foot = <span class="hljs-keyword">new</span> Node(<span class="hljs-keyword">null</span>, head, <span class="hljs-keyword">null</span>);  
+        } 
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">lookup</span>(<span class="hljs-keyword">int</span> info) {
+            <span class="hljs-keyword">if</span>( <span class="hljs-keyword">this</span>.head.next == <span class="hljs-keyword">this</span>.foot ) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+            }
+
+            Node temp = <span class="hljs-keyword">this</span>.head.next;
+            <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) {
+                <span class="hljs-keyword">if</span>( temp.data == info ) {
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+                } <span class="hljs-keyword">else</span> {
+                    temp = temp.next; 
+                }
+            }
+            <span class="hljs-keyword">if</span>( temp.data == info ) 
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+            <span class="hljs-keyword">else</span> 
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+        }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">insert</span>(<span class="hljs-keyword">int</span> info) {
+            <span class="hljs-keyword">if</span>( !lookup(info) ) {
+                <span class="hljs-comment">//inserting into the beginning</span>
+                <span class="hljs-keyword">if</span>( info &lt; head.data ) {
+                    Node newNode = <span class="hljs-keyword">new</span> Node(info, head, head.next);
+                    head.next.prev = newNode;
+                    head.next = newNode; 
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+                }
+
+                Node temp = <span class="hljs-keyword">this</span>.head.next; 
+                <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) {
+                    <span class="hljs-comment">//inserting into the middle</span>
+                    <span class="hljs-keyword">if</span>(info &gt; temp.data &amp;&amp; info &lt;= temp.next.data){
+                        Node newNode = <span class="hljs-keyword">new</span> Node(info, temp, temp.next);
+                        temp.next = newNode; 
+                        newNode.next.prev = newNode; 
+                        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+                    } <span class="hljs-keyword">else</span> {
+                        temp = temp.next;
+                    }
+                }
+
+                <span class="hljs-comment">//inserting into the end</span>
+                newNode = <span class="hljs-keyword">new</span> Node(info, <span class="hljs-keyword">this</span>.foot.prev, <span class="hljs-keyword">this</span>.foot);
+                <span class="hljs-keyword">this</span>.foot.prev = newNode;
+                newNode.prev.next = newNode; 
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+        }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">delete</span>(<span class="hljs-keyword">int</span> info) {
+        <span class="hljs-keyword">if</span>( lookup(info) ) {
+            <span class="hljs-comment">//deleting from the beginning</span>
+            <span class="hljs-keyword">if</span>( info == <span class="hljs-keyword">this</span>.head.next.data ) {
+                <span class="hljs-keyword">this</span>.head.next = <span class="hljs-keyword">this</span>.head.next.next;
+                head.next.prev = head;
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+
+            Node temp = <span class="hljs-keyword">this</span>.head.next; 
+            <span class="hljs-keyword">while</span>( temp.next.data != <span class="hljs-keyword">null</span> ) {
+                <span class="hljs-comment">//deleting from the middle</span>
+                <span class="hljs-keyword">if</span>( info == temp.next.data ) {
+                    temp.next = temp.next.next;
+                    temp.next.next.prev = temp;
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+                } <span class="hljs-keyword">else</span> {
+                    temp = temp.next; 
+                }   
+            }
+
+            <span class="hljs-comment">//deleting from the end</span>
+            temp.next = <span class="hljs-keyword">this</span>.foot;
+            <span class="hljs-keyword">this</span>.foot.prev = temp;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>; 
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>; 
+    }
+}</code></pre>
+
+</div>
+
+<div class="stacks">
+  <h1 id="stacks">Stacks</h1>
+
+  <p>wow I love stacks <br>
+  </p><div class="minor">
+
+  <pre class="prettyprint"><code class="language-java hljs ">stack.love = <span class="hljs-keyword">true</span>;</code></pre></div>
+
+</div>
+
+<div class="Queues">
+
+  <h1 id="queues">Queues</h1>
+
+  <p>wow I love queues <br>
+  </p><div class="minor">
+
+  <pre class="prettyprint"><code class="language-java hljs ">queues.love = <span class="hljs-keyword">true</span>;</code></pre></div>
+
+</div>
+
+<div class="Heaps">
+
+  <h1 id="heaps">Heaps</h1>
+
+  <p>wow I love heaps <br>
+  </p><div class="minor">
+
+  <pre class="prettyprint"><code class="language-java hljs ">heaps.love = <span class="hljs-keyword">true</span>;</code></pre></div>
+
+</div>
+
+<div class="HashTable">
+
+  <h1 id="hash-tables">Hash Tables</h1>
+
+  <p>wow I love hash tables <br>
+  </p><div class="minor">
+
+  <pre class="prettyprint"><code class="language-java hljs ">hash.love = <span class="hljs-keyword">true</span>;</code></pre></div>
+
+</div>
+
+<div class="Btree">
+
+  <h1 id="binary-search-trees">Binary Search Trees</h1>
+
+  <p>wow I love btrees <br>
+  </p><div class="minor">
+
+  <pre class="prettyprint"><code class="language-java hljs ">btree.love = <span class="hljs-keyword">true</span>;</code></pre></div>
+
+</div>
+
+<div class="avlTree">
+
+  <h1 id="avl-trees">AVL Trees</h1>
+
+  <p>wow I love avltrees <br>
+  </p><div class="minor">
+
+  <pre class="prettyprint"><code class="language-java hljs ">avltrees.love = <span class="hljs-keyword">true</span>;</code></pre></div>
+
+</div>
+
+</div>
+</body>

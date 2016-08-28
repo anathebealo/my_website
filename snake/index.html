@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>	
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<script src="js/gameplay.js"> </script>
+    </head>
+    <body>
+        <h1> ASCII Snake Game</h1>
+        
+        <h3> Instructions </h3>
+        <p> 
+            <ol>
+                <li> Click start to create the board </li>
+                <li> Hit the spacebar to begin </li>
+                <li> Use the arrow keys to move the snake around </li>
+                <li> Don't hit the walls or your tail! </li>
+            </ol>
+        </p>
+        <div class="gameboard">
+            <pre id = "board">
+            </pre>
+        </div>  
+            
+        <div class = "buttons"> 
+            <button id="startGame" type="button" onclick="initializeGame()"> Start Game! </button>
+            <button id="restartGame" type="button" onclick="restartGame()"> Restart </button> 
+        </div>
+    </body>
+</html>        

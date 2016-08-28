@@ -1,0 +1,92 @@
+img {
+	width: 100%;
+}
+
+.container img:hover {
+	opacity: .8;
+	border-bottom: solid 5px red;
+}
+
+.container {
+	display: inline-block;
+	width: 25%;
+	height: 240px;
+	margin: 5px;
+	max-height: 25%;
+	overflow: hidden;
+}
+
+.container:hover {
+	 -webkit-transition: margin-bottom 1s ease;
+	 -webkit-transition: border-bottom 1s ease;
+	outline-bottom: solid 3px red;
+	margin-bottom: 2px;
+}
+
+#big {
+	width: 80%;
+	margin: 50px;
+}
+
+#big-tall {
+	width: 45%;
+	margin-left: 20%;
+	margin-right: 20%;`
+}
+
+.container img.clicked:hover {
+	opacity: 1;
+}
+
+.double-tall {
+	margin: -75px 0 0 0px;
+}
+
+#photo_grid {
+	z-index: 1;
+	width: 80%;
+	text-align: center;
+	height: 100%;
+	margin: auto;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('loading.gif') 50% 50% no-repeat rgb(249,249,249);
+	background-size: 50px;
+}
+
+#loading {
+	width: 20%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#loading img {
+	width: 100%;
+}
+
+body {
+	background-color: black
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	font-family: Abel, sans-serrif;
+}
+
+h3 {
+	color: white;
+	text-align: center;
+	font-family: Abel, sans-serrif;
+}
+
+a {
+	color: white;
+}

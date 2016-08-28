@@ -1,0 +1,139 @@
+ol li {
+	margin-bottom: 3px;
+}
+
+#whole_recipe {
+	font-family: 'David Libre', sans-serif;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#title h1{
+	text-align: center;
+	font-family: 'Farsan', cursive;
+	font-size: 55px;
+	line-height: 5px;
+	margin-top: 70px;
+}
+
+#source {
+	width: 50%;
+	display: inline-block;
+	text-align: right;
+}
+
+img {
+	width: 100%;
+	box-shadow: 0px 12px 16px -12px black;
+}
+
+#date {
+	width: 50%;
+	float: left;
+	display: inline-block;
+	text-align: left;
+}
+
+#recipe_text {
+	line-height: 20px;
+}
+
+#ingredients {
+	float: left;
+	padding: 0px 10px 0px 0px;
+	border-right: solid 1px rgb(236, 232, 232);
+	display: inline-block;
+	width: 30%;
+}
+
+#directions {
+	float: left;
+	padding-left: 20px;
+	width: 60%;
+	text-align: justify;
+	display: inline-block;
+}
+
+#recipe_sidebar {
+	width: 13%;
+	height: 92%;
+	border-right: solid 1px rgb(236, 232, 232);
+	position: fixed;
+	overflow-y: auto;
+}
+
+#sidebar_container {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+	text-align: center;
+}	
+
+.sidebar_thumbnail {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	position: relative;
+	border-bottom: solid 1px rgb(236, 232, 232);
+	text-align: center;
+	cursor: pointer; 
+}
+
+.sidebar_thumbnail img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	margin-top: -15px;
+}
+
+.sidebar_thumbnail p {
+	font-size: 20px;
+	font-family: 'Farsan', cursive;
+}
+
+#sidebar_butt {
+	margin-top: 0px;
+	margin-bottom: 10px;
+	width: 70%;
+}
+
+#recipe_sidebar::-webkit-scrollbar{
+    width: 10px;
+}
+
+#recipe_sidebar::-webkit-scrollbar-track{
+    background: white;
+}
+
+#recipe_sidebar::-webkit-scrollbar-thumb{
+    width: 10px;
+    background: #eeeeee;
+}
+
+
+#loading {
+	width: 20%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#loading img {
+	width: 100%;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('images/loading.gif') 50% 50% no-repeat rgb(249,249,249);
+	background-size: 50px;
+}
+
+.whitespace {
+	height: 1000px;
+}

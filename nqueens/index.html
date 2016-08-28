@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+  <title> N-Queens Project Page </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"> </script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="d3/d3.v3.js"></script>
+</head>
+
+<body>
+<div id="header">
+    <h1> N-Queens Solver </h1>
+    <p>Please enter the number of queens you wish to place on an nxn chess board </p>
+</div>
+
+<div id="info_input">
+    <input type="text" name="name" id="get_n"/>
+    <button onclick="startGame()" id="submit">Generate Board</button>
+    <br>
+    <br>
+</div>
+
+<div id="board">
+
+</div>
+
+</div>
+</body>
+
+<!-- <div id="footer">
+    <a href="projects.html"> Back </a>
+</div> -->
+
+<script> 
+$("#get_n").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#submit").click();
+    }
+});
+</script> 
+
+</html>
