@@ -33,7 +33,15 @@ L.mapbox.featureLayer()
 document.getElementById('copenhagen').addEventListener('click', function () {
     //mapCluster.panTo(new L.LatLng(55.821774, 12.378587), {animate: true, duration: 5.0});
     mapCluster.setView(new L.LatLng(55.821774, 12.378587), 10);
+
+	$("#info").html("<h3> Places I visited in Copenhagen</h3> <ul> <? php include ('header.php'); ?></ul>")
+
+    return false;
 });
+
+function gotData(responseText) {
+	document.getElementById("info").html("<h3> Places I visited</h3> <ul>" + responseText + "</ul>")
+}
 
 document.getElementById('ireland').addEventListener('click', function () {
     mapCluster.setView(new L.LatLng(53.3498, -6.2603), 10);
@@ -42,3 +50,5 @@ document.getElementById('ireland').addEventListener('click', function () {
 function zoom_to(lat, long) {
 	mapCluster.setView(new L.LatLng(lat, long), 17);
 }
+
+
