@@ -16,13 +16,14 @@
 <body>
 	<div> 
 		<h1> Places I have been </h1>
+		<hr>
 	</div>
 	<div class="map">
 		<div id='map-cluster-copenhagen' class='map-copenhagen'></div>
 	</div>
 	<div id="cop">
 		<div id="buttons">
-			<button id="copenhagen">Copenhagen</button>
+			<button id="copenhagen">Denmark</button>
 			<button id="ireland">Ireland</button>
 		</div>
 		<div id='info'>

@@ -1,19 +1,22 @@
 <?php
-	$servername = "localhost";
-	$username = "anabapjd_admin";
-	$password = "Toms-gal404";
-	$database = "anabapjd_maps";
+	$configFile = fopen("configuration.txt", "r") or die("unable to open file");
+	$servername = trim(fgets($configFile));
+	$username = trim(fgets($configFile));
+	$password = trim(fgets($configFile));
+	$database = trim(fgets($configFile));
+	fclose($configFile);
 
+	$cntry = $_POST['ID'];
 	try {
 	    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
 	    
-		$statement = $conn->prepare("SELECT * FROM locations WHERE city = :cit");
-		$statement->execute(array(':cit' => "Copenhagen"));
+		$statement = $conn->prepare("SELECT * FROM locations WHERE country = :country");
+		$statement->execute(array(':country' => $cntry));
+		$jsonObject = array();
 		while($row = $statement->fetch()) {
-			//echo "<li>".$row['name']."</li>";
-			echo "<li><a onclick='zoom_to(".$row['latitude'].",".$row['longitude'].")'>".$row['name']."</a></li>";
+			array_push($jsonObject, array('lat' => $row['latitude'], 'long' => $row['longitude'], 'name' => $row['name']));
 		}
-
+		echo json_encode($jsonObject);
 	    // set the PDO error mode to exception
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 	} catch(PDOException $e) {

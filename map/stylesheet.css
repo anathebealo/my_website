@@ -1,6 +1,7 @@
 body { 
 	margin:0;
-	padding:0; 
+	padding:0;
+	font-family: 'Lora', serif;
 }
 
 h1 {
@@ -13,8 +14,8 @@ ol {
 }
 
 .map {
-	display: block;
-	width: 100%;
+	display: inline-block;
+	width: 70%;
 	height: 750px;
 	-webkit-transition: height linear 2s;
 }
@@ -25,3 +26,8 @@ ol {
 	-webkit-transition: height linear 2s;
 }
 
+#cop {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+}
