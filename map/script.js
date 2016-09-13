@@ -7,7 +7,7 @@ var mapCluster = L.mapbox.map('map-cluster-copenhagen')
 //mapCluster.scrollWheelZoom.disable();
 
 L.mapbox.featureLayer()
-    .loadURL('copenhagen.geojson')
+    .loadURL('markers.geojson')
     .on('ready', function(e) {
 	    var clusterGroup = new L.MarkerClusterGroup();
 	    e.target.eachLayer(function(layer) {
@@ -18,38 +18,38 @@ L.mapbox.featureLayer()
 	mapCluster.addLayer(clusterGroup);
 });
 
-L.mapbox.featureLayer()
-	.loadURL('ireland.geojson')
-    .on('ready', function(e) {
-	    var irelandClusterGroup = new L.MarkerClusterGroup();
-	    e.target.eachLayer(function(layer) {
-	    	layer.bindPopup("<p>" + layer.feature.properties.popupContent + "</p>")
-	        irelandClusterGroup.addLayer(layer);
-	  	});
-
-	mapCluster.addLayer(irelandClusterGroup);
-});
-
-document.getElementById('copenhagen').addEventListener('click', function () {
-    mapCluster.setView(new L.LatLng(55.821774, 12.378587), 10);
-    $.ajax({
+function showList(country) {
+	$.ajax({
 	    url      : 'header.php',
-	    data     : {ID:"Denmark"},
+	    data     : {ID:country},
 	    datatype : 'json',
 	    type     : 'post',
 	    success  : function(Result){
             var myObj = $.parseJSON(Result);
             var infoText = "";
-            // console.log(myObj);
         	for(var i = 0; i < myObj.length; i++) {
 				var obj = myObj[i];
 				console.log(obj);
 				infoText += "<li> <a onclick='zoom_to(" + obj.lat + "," + obj.long + ")'>" + obj.name + "</a> </li>";
 			}
 			//console.log(infoText);
-			$("#info").html("<h3> Places I visited in Copenhagen</h3> <ul> " + infoText + "</ul>")
+			$("#info").html("<h3> Places I visited in " + country +  " </h3> <ul> " + infoText + "</ul>")
         }
 	});
+}
+
+document.getElementById('copenhagen').addEventListener('click', function () {
+    showList("Denmark");
+    mapCluster.setView(new L.LatLng(55.821774, 12.378587), 10);
+	// $.ajax({
+	//     url      : 'json.php',
+	//     datatype : 'json',
+	//     type     : 'get',
+	//     success  : function(Result){
+	//     	//console.log($.parseJSON(Result));
+	//     	console.log(Result);
+ //        }
+	// });
     return true;
 });
 
@@ -58,25 +58,8 @@ function gotData(responseText) {
 }
 
 document.getElementById('ireland').addEventListener('click', function () {
-    mapCluster.setView(new L.LatLng(53.4129, -8.2439), 7);
-    $.ajax({
-	    url      : 'header.php',
-	    data     : {ID:"Ireland"},
-	    datatype : 'json',
-	    type     : 'post',
-	    success  : function(Result){
-            var myObj = $.parseJSON(Result);
-            var infoText = "";
-            // console.log(myObj);
-        	for(var i = 0; i < myObj.length; i++) {
-				var obj = myObj[i];
-				console.log(obj);
-				infoText += "<li> <a onclick='zoom_to(" + obj.lat + "," + obj.long + ")'>" + obj.name + "</a> </li>";
-			}
-			//console.log(infoText);
-			$("#info").html("<h3> Places I visited in Ireland -- List not populated yet :(</h3> <ul> " + infoText + "</ul>")
-        }
-	});
+	showList("Ireland");
+	mapCluster.setView(new L.LatLng(53.4129, -8.2439), 7);
     return true;
 });
 

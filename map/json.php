@@ -1,29 +1,20 @@
 <?php
 	$configFile = fopen("configuration.txt", "r") or die("unable to open file");
-	$servername = trim(fgets($configFile));
 	$username = trim(fgets($configFile));
 	$password = trim(fgets($configFile));
-	$database = trim(fgets($configFile));
 	fclose($configFile);
 
 	try {
-	    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+	    $conn = new PDO("mysql:host=localhost;dbname=anabapjd_maps", $username, $password);
 	    
 		$statement = $conn->prepare("SELECT * FROM locations NATURAL JOIN (SELECT * FROM markers NATURAL JOIN markerAssignments) AS marks;");
 		$statement->execute();
 		$featuresArray = array();
-		$name = "";
-		$markerColor = "";
-		$marker = "";
-		$line = "";
-		$desc = "";
-		$lat = 0;
-		$long = 0;
 
 		while($row = $statement->fetch()) {
 			$name = $row['name'];
 			$markerColor = $row['color'];
-			$marker = $row=['markerName'];
+			$marker = $row['markerName'];
 			$line = $row['lineColor'];
 			$desc = $row['description'];
 			$lat = $row['latitude'];
