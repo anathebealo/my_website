@@ -14,25 +14,23 @@
 
 	<body>
 		<h1>HASH TABLE GAME</h1>
-		<h3 class="probingName">Type of Probing: </h3>
-		<!-- <select id="type_of_table">
-			<option value="Linear Probing">Linear Probing</option> 
-		  	<option value="Double Hashing" selected>Double Hashing</option>
-		  	<option value="Separate Chaining">Separate Chaining</option>
-		</select> -->
+		<div id="info" class="centerMed">
+			<span id="instructions">
+				<h2>INSTRUCTIONS </h2>
+				<p> This is a tool to help learn about hash tables. There are three kinds of hashing that are commonly used: linear probing, separate chaining and double hashing. This version of this 'game' uses linear probing. <br><br>
+				INSERT is the number that needs to be added to the hash table during this round. To insert it, use the FUNCTION to determine which index it should go in. If that index is filled already, then linearly probe through the hashtable until you find an open spot. Click on the green boxes to add a number to the table.</p>
+			</span>
+			<span id="values">
+				<h3 id="probingName"> </h3>
 
-		<div id="table_info">
-		</div>
-
-		<!-- <div id="instructions">
-			<p>Click to make a new hash table.</p>
-		</div> -->
-	  <h1 id="probe"> </h1>
-		<h1 id="nextRandom"> </h1>
-    <h1 id="hashFunc"> </h1>
+			  	<h1 id="probe"> </h1>
+				<h1 id="nextRandom"> </h1>
+		    	<h1 id="hashFunc"> </h1>
+	    	</span>
+    	</div>
 		<div id="table"> </div>
+		<div id="message" class="centerSmall"> </div>
 
-		<!-- <div id="winnerscircle"> </div> -->
 		<button name="random" onclick="main()">Make Hash Table</button>
 	</body>
 	<script src="js/hash_tables_with_classes.js" charset="utf-8"></script>

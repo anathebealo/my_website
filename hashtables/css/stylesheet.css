@@ -1,20 +1,51 @@
 body {
     text-align: center;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 
 p {
-    font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
     font-weight:200;
 }
 
+p#wrong {
+    background-color: #fc8d91;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+p#done {
+    background-color: #81c17d;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.centerSmall {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.centerMed {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#instructions {
+    display: inline-block;
+}
+#values {
+    display: inline-block;
+}
+
 h1 {
-    font:32px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:32px;
     font-weight:500;
 }
 
 h3 {
-    font:20px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:20px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:400;
 }
 
@@ -23,7 +54,7 @@ tr {
 }
 
 #buttons td {
-    font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:14px;
     height: 50px;
     width: 50px;
     padding: 0px;
@@ -31,7 +62,7 @@ tr {
 }
 
 #index td {
-    font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:14px;
     height: 10px;
     width: 50px;
     padding: 0px;
@@ -83,6 +114,6 @@ table {
 }
 
 strong {
-    font:16px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
     font-weight: 600;
 }
