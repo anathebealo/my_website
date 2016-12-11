@@ -1,14 +1,12 @@
 <?php
 	$configFile = fopen("configuration.txt", "r") or die("unable to open file");
-	$servername = trim(fgets($configFile));
 	$username = trim(fgets($configFile));
 	$password = trim(fgets($configFile));
-	$database = trim(fgets($configFile));
 	fclose($configFile);
 
 	$cntry = $_POST['ID'];
 	try {
-	    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+	    $conn = new PDO("mysql:host=localhost;dbname=anabapjd_maps", $username, $password);
 	    
 		$statement = $conn->prepare("SELECT * FROM locations WHERE country = :country");
 		$statement->execute(array(':country' => $cntry));

@@ -1,22 +1,71 @@
-//initiate game
-
-/*
- * figure out how many queens to place
- * make sure it is a solvable number of them
- * call create objects method
- * solve for queens
- * call for animations
- */
 function start_game(){
 	n = document.getElementById('get_n').value; 
 	if(is_proper_n(n)) {
 		a_queen_solutions = solve_n_queens(n);
+		console.log(a_queen_solutions);
+		make_table(a_queen_solutions);
 	} else {
 		document.getElementById('board').innerHTML = "<p> It is not possible to solve n-queens with an n value of <span id='n_value'>" + n + "</span></p>";
 	}
 
 };
+
+function is_proper_n(n) {
+	if(n > 3) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
 //create objects for board and queens
+function make_table(solution) {
+	document.getElementById("boardContainer").innerHTML = "<table id='board'> </table>";
+    var board = [];
+	//make game board
+	var tableString = "";
+	for(var i = 0; i < solution.length; i++) {
+		board.push([]);
+		tableString += "<tr>";
+		for(var j = 0; j < solution.length; j++) {
+			if( solution[i] === j) {
+				board[i].push(1);
+			} else {
+				board[i].push(0);
+			}
+			if(i%2 === 0 && j%2 === 0) {
+				tableString += "<td id= '" + i + j + "' class='boardSpot black'></td>";
+			} else if(i%2 === 0 && j%2 === 1) {
+				tableString += "<td id= '" + i + j + "' class='boardSpot white'></td>";
+			} else if(i%2 === 1 && j%2 === 0) {
+				tableString += "<td id= '" + i + j + "' class='boardSpot white'></td>";
+			} else {
+				tableString += "<td id= '" + i + j + "' class='boardSpot black'></td>";
+			}
+			
+		}
+		tableString += "</tr>";
+	}
+
+	document.getElementById("board").innerHTML = tableString;
+	document.getElementById("generateBoard").disabled = true;
+
+	//add in the queens	
+	timeout(board, solution, 0);
+}
+
+function timeout(board, solution, counter) {
+	setTimeout(function() {
+		if(counter < solution.length) {
+			document.getElementById("" + counter + solution[counter]).className += " queen";
+			counter++;
+			timeout(board, solution, counter);
+		} else {
+			document.getElementById("generateBoard").disabled = false;
+		}
+	}, 1000/solution.length);
+}
 
 //solve for queen spots
 function solve_n_queens(n) {
@@ -97,15 +146,11 @@ function find_collisions(board) {
  * checks for collision between two coordinates in gameboard
  */
 function exists_collision(i, j, k, l) {
-	if( i == k ) {
+	if( i == k || j == l ||  Math.abs(i - k) == Math.abs(j - l)) {
 		return true; 
-	} else if( j == l) {
-		return true; 
-	} else if( Math.abs(i - k) == Math.abs(j - l)) {
-		return true; 
-	} else {
-		return false; 
 	}
+	
+	return false; 
 }
 
 /* 
@@ -137,6 +182,3 @@ function is_solution(board) {
 	}
 	return true; 
 }
-
-
-//do animations

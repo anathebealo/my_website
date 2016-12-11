@@ -67,12 +67,15 @@ function Game_object(sizes, probes) {
     this.html_hash_table = undefined;
 
     this.start_game = function() {
+        document.getElementById("message").innerHTML = "";
+
         var random_index = Math.floor(Math.random()*6);
         this.game_hash_table = new Linear_probing_hash_table(sizes[random_index], probes[random_index]);
 
         this.random_inserts = [];
         for(var i = 0; i<sizes[random_index]; i++) {
-            this.random_inserts.push(Math.floor(Math.random()*50));
+            var random = Math.floor(Math.random()*70);
+            this.random_inserts.push(random);
         }
 
         console.log("size: " + sizes[random_index]);
@@ -92,15 +95,18 @@ function Game_object(sizes, probes) {
         for(i = 0; i<sizes[random_index]; i++) {
             this.html_hash_table.push("<td> <button class='table_button' onclick='check_selected_index(" + i + ")'"+ i + "'> __ </button></td>");
         }
-        document.getElementById("probe").innerHTML = "PROBE: " + probes[random_index];
-        document.getElementById("hashFunc").innerHTML = "FUNCTION: (key)%" + sizes[random_index];
+        document.getElementById("probe").innerHTML = "<p><strong>PROBE: " + probes[random_index] + "</strong></p>";
+        document.getElementById("hashFunc").innerHTML = "<p><strong>FUNCTION: (key)%" + sizes[random_index] + "</strong></p>";
+        document.getElementById("probingName").innerHTML = "<p><strong>Type of Probing: Linear Probing </strong></p>";
         give_next_random();
     }
 
-    this.next_random = function() {
-      console.log(this.random_inserts.length - this.remaining_inserts);
+    this.next_random = function() { 
+        if(this.remaining_inserts === 0) {
+            return -1;
+        }
         this.current_random = this.random_inserts[this.random_inserts.length - this.remaining_inserts];
-        this.remaining_inserts--
+        this.remaining_inserts--;
         return this.current_random;
     }
 
@@ -110,18 +116,27 @@ function Game_object(sizes, probes) {
 }
 
 function give_next_random() {
-    document.getElementById("nextRandom").innerHTML = "INSERT: " + game.next_random();
+    var next = game.next_random();
+    if(next === -1) {
+        document.getElementById("nextRandom").innerHTML = "";
+        document.getElementById("hashFunc").innerHTML = "";
+        document.getElementById("probe").innerHTML = "";
+        document.getElementById("message").innerHTML = "<p id='done'>Congrats! You correctly inserted all numbers! If you want to do another one, click the 'make hash table' button below.</p>";
+    } else {
+        document.getElementById("nextRandom").innerHTML = "<p><strong> INSERT: " + next + "</strong></p>";
+    }
 }
 
 function check_selected_index(guess_index) {
     if( game.check_insert(guess_index) ) {
+        document.getElementById("message").innerHTML = "";
         game.user_hash_table.insert(game.current_random, guess_index);
         game.html_hash_table[guess_index] = "<td> <button class='empty_row'>" + game.user_hash_table.table[guess_index][0]+ "</button></td>";
         draw_table();
-    give_next_random();
+        give_next_random();
     } else {
         //wait for user to give next guess
-        console.log("sorry that was wrong, try again");
+        document.getElementById("message").innerHTML = "<p id='wrong'>Sorry, that guess is incorrect. Please guess again.</p>";
     }
 }
 
@@ -133,7 +148,6 @@ function main() {
     game.start_game();
     draw_table()
 }
-
 
 function draw_table() {
     var table_str = "<table id='buttons'>";

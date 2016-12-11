@@ -1,0 +1,844 @@
+{
+   "type":"FeatureCollection",
+   "crs":{
+      "type":"name",
+      "properties":{
+         "name":"urn:ogc:def:crs:OGC:1.3:CRS84"
+      }
+   },
+   "features":[
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Amalienborg Palace",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Amalienborg Palace: Home of the Danish Royal Family"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.593",
+               "55.6841"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Rosenborg Castle",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Rosenborg Castle: A renaissance castle located in Copenhagen, Denmark. The castle was originally built as a country summerhouse in 1606 and is an example of Christian IVs many architectural projects."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5773",
+               "55.6858"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Christiansborg Palace",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Christiansborg Palace: A palace and government building that houses the Danish Parliament, the Danish Prime Minister Office and the Supreme Court of Denmark. Definitely tour the ruins under the palace -- extrememly cool!"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5805",
+               "55.6762"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"National Museum",
+            "marker-color":"#0000ff",
+            "marker-symbol":"museum",
+            "line":"blue",
+            "popupContent":"National Museum:  Denmark\u2019s largest museum of cultural history, comprising the histories of Danish and foreign cultures, alike."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5747",
+               "55.6746"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Tivoli",
+            "marker-color":"#008000",
+            "marker-symbol":"park",
+            "line":"green",
+            "popupContent":"Tivoli: Second oldest operating amusement park in the world -- opened on August 15, 1843."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5681",
+               "55.6737"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"National Workers Museum",
+            "marker-color":"#0000ff",
+            "marker-symbol":"museum",
+            "line":"blue",
+            "popupContent":"National Workers Museum: Museum that shows how the daily life of Copenhagen workers has evolved over the last 150 years."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5704",
+               "55.6847"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Botanical Gardens",
+            "marker-color":"#008000",
+            "marker-symbol":"park",
+            "line":"green",
+            "popupContent":"Botanical Gardens: 10 hectares of nicely maintained gardens owned by the University of Copenhagen."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5728",
+               "55.6852"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Kronborg Castle",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Kronborg Castle: 16th-century castle with banqueting hall and royal chambers, the model for Elsinore in Hamlet."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.6212",
+               "56.039"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Frederiksborg Castle",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Frederiksborg Castle: A beautiful castle built as a royal residence for King Christian IV of Denmark-Norway in the early 17th century."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.3013",
+               "55.935"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Viking Ship Museum",
+            "marker-color":"#0000ff",
+            "marker-symbol":"museum",
+            "line":"blue",
+            "popupContent":"Viking Ship Museum: Denmarks national museum for ships, seafaring and boatbuilding in the prehistoric and medieval period. Extremely cool, definitely visit!"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.0805",
+               "55.6508"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Carlsberg Brewery",
+            "marker-color":"#ff0000",
+            "marker-symbol":"bar",
+            "line":"red",
+            "popupContent":"Carlsberg Brewery: Brewery tour of brewery founded in 1847."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5326",
+               "55.6674"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Copenhagen Zoo",
+            "marker-color":"#008000",
+            "marker-symbol":"zoo",
+            "line":"green",
+            "popupContent":"Copenhagen Zoo: A zoological garden in Copenhagen, Denmark. Founded in 1859, it is one of the oldest zoos in Europe"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5214",
+               "55.6728"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Cisternerne",
+            "marker-color":"#008000",
+            "marker-symbol":"art-gallery",
+            "line":"green",
+            "popupContent":"The Cisterns: A subterranean reservoir, once contained the supply of drinking water for the Danish capital and could hold as much as 16 million liters of clean water. It is now an art musuem with rotating exhibitions."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5245",
+               "55.6695"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Den Bla Planet",
+            "marker-color":"#0000ff",
+            "marker-symbol":"water",
+            "line":"blue",
+            "popupContent":"Den Bla Planet: Public aquarium -- lots of fish and cool tunnel to walk through. Also has a good otter exhibit."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.6568",
+               "55.638"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Amager Strand Park",
+            "marker-color":"#0000ff",
+            "marker-symbol":"bicycle",
+            "line":"blue",
+            "popupContent":"Amager Strand Park: Public beach park with great walking\/biking trails down the length of it (roughly 10km)"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.6423",
+               "55.6582"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Stroget Street",
+            "marker-color":"#ffffff",
+            "marker-symbol":"shop",
+            "line":"white",
+            "popupContent":"Stroget Street: A long set of pedestrian only streets that house numerous restaurants and shops along the sides."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5802",
+               "55.679"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Nyhavn Canal",
+            "marker-color":"#0000ff",
+            "marker-symbol":"harbor",
+            "line":"blue",
+            "popupContent":"Nyhavn Canal: A 17th-century waterfront, canal and entertainment district. It houses many restaurants and offers nice views."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5902",
+               "55.6799"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Freetown Christiania",
+            "marker-color":"#008000",
+            "marker-symbol":"pharmacy",
+            "line":"green",
+            "popupContent":"Freetown Christiania (also known as Freetown Christiania): A self-proclaimed autonomous neighborhood of about 850 residents, covering 34 hectares in the borough of Christianshavn in the Danish capital Copenhagen."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5973",
+               "55.6736"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Kastellet",
+            "marker-color":"#008000",
+            "marker-symbol":"park",
+            "line":"green",
+            "popupContent":"Kastellet: This is one of the best preserved star fortresses in Northern Europe. It is constructed in the form of a pentagram with bastions at its corners. In addition, there is a nice park area around the bentagram to walk around."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5944",
+               "55.6914"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"The Little Mermaid",
+            "marker-color":"#ffff00",
+            "marker-symbol":"monument",
+            "line":"yellow",
+            "popupContent":"The Little Mermaid: This is a bronze statue by Edvard Eriksen, depicting a mermaid. The sculpture is displayed on a rock by the waterside at the Langelinie promenade. It is 1.25 metres tall and weighs 175 kilograms"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5944",
+               "55.6914"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Canal Tours",
+            "marker-color":"#0000ff",
+            "marker-symbol":"water",
+            "line":"blue",
+            "popupContent":"Canal Tours: A great start to our trip, this tour offers an intro to the places along the canals in central Copenhagen."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5803",
+               "55.6777"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Airbnb 1",
+            "marker-color":"#ffff00",
+            "marker-symbol":"suitcase",
+            "line":"yellow",
+            "popupContent":"Airbnb 1: The first place that we stayed"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.564",
+               "55.683"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Airbnb 2",
+            "marker-color":"#ffff00",
+            "marker-symbol":"suitcase",
+            "line":"yellow",
+            "popupContent":"Airbnb 2: The second place we stayed"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.6216",
+               "55.6584"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Place we sat to eat pizza",
+            "marker-color":"#FFA500",
+            "marker-symbol":"restaurant",
+            "line":"orange",
+            "popupContent":"Place we sat to eat pizza"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5947",
+               "55.6798"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Street Food",
+            "marker-color":"#FFA500",
+            "marker-symbol":"restaurant",
+            "line":"orange",
+            "popupContent":"Street Food: Waterside marketplace featuring independent food stalls and trucks selling snacks, meals and drinks."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5982",
+               "55.6794"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Nyhavn Pizza and Pastasalat",
+            "marker-color":"#FFA500",
+            "marker-symbol":"restaurant",
+            "line":"orange",
+            "popupContent":"Nyhavn Pizza and Pastasalat: A great pizza place that offers 2 beers and a pizza for ~$26 (the cheapest food we found while in Copenhagen). Also some of the best pizza we have ever had."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "12.5895",
+               "55.6806"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Kilmainham Gaol",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Kilmainham Gaol: Old jailhouse that was open for tours. Cool place."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.3098",
+               "53.3419"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Guinness Storeroom",
+            "marker-color":"#ff0000",
+            "marker-symbol":"bar",
+            "line":"red",
+            "popupContent":"Guinness Storeroom: We were able to tour the storerooms and see how Guinness is made. It also came with Guinness tastings and we were taught the official way to pour a Guinness from a tap."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.28662",
+               "53.3419"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Long Library",
+            "marker-color":"#0000ff",
+            "marker-symbol":"museum",
+            "line":"blue",
+            "popupContent":"Long Library: This is where the book of Kells and other old manuscripts are kept. Beautiful library!"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.2568",
+               "53.3439"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Trinity College",
+            "marker-color":"#0000ff",
+            "marker-symbol":"museum",
+            "line":"blue",
+            "popupContent":"Trinity College: Beautiful old university located in the center of Dublin."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.25855",
+               "53.3444"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Dublin Castle",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Dublin Castle: Was, until 1922, the seat of the administration of the United Kingdom government in Ireland, and is now a major Irish government complex."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.2674",
+               "53.3429"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Temple Bar",
+            "marker-color":"#ffff00",
+            "marker-symbol":"suitcase",
+            "line":"yellow",
+            "popupContent":"Temple Bar: Area where we stayed in Dublin -- lots of bars to explore."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.26492",
+               "53.3451"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Cork",
+            "marker-color":"#ffff00",
+            "marker-symbol":"suitcase",
+            "line":"yellow",
+            "popupContent":"Cork: Town we stayed in overnight though I now regret not seeing more of it."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-8.4658",
+               "51.8994"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"The Locke Bar",
+            "marker-color":"#FFA500",
+            "marker-symbol":"restaurant",
+            "line":"orange",
+            "popupContent":"The Locke Bar"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-8.62307",
+               "52.6672"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"St Johns Castle",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"St Johns Castle"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-8.62547",
+               "52.6697"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Kilkenny Castle",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Kilkenny castle: Amazing old castle in Kilkenny -- great tours and cool architecture."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-7.24936",
+               "52.6501"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Killarney",
+            "marker-color":"#ffff00",
+            "marker-symbol":"suitcase",
+            "line":"yellow",
+            "popupContent":"Killarney: Cute tourist town in the center of Ireland"
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-9.5076",
+               "52.0593"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Rock of Cashel",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Rock of Cashel: also known as Cashel of the Kings and St. Patricks Rock, is a historic site."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-7.89032",
+               "52.5199"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Mountain Road",
+            "marker-color":"#008000",
+            "marker-symbol":"park",
+            "line":"green",
+            "popupContent":"Mountain road: Amazing scenic views were found on this random road when we got lost on our way to Dingle."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-9.88383",
+               "52.1944"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Town of Dingle",
+            "marker-color":"#0000ff",
+            "marker-symbol":"harbor",
+            "line":"blue",
+            "popupContent":"Town of Dingle: cute seaside town with lots of little shops and cozy pubs."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-10.2664",
+               "52.1411"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Cliffs of Moher",
+            "marker-color":"#008000",
+            "marker-symbol":"park",
+            "line":"green",
+            "popupContent":"Cliffs of Mohor: beautiful cliffs overlooking the Atlantic."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-9.43245",
+               "52.9734"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Eyre square",
+            "marker-color":"#008000",
+            "marker-symbol":"park",
+            "line":"green",
+            "popupContent":"Eyre Square: square in the middle of Galway -- grassy spot to sit and relax."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-9.04907",
+               "53.2743"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"An Pucan",
+            "marker-color":"#FFA500",
+            "marker-symbol":"restaurant",
+            "line":"orange",
+            "popupContent":"An Pucan: a great restaurant where we had the best brown bread we have ever eaten."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-9.04741",
+               "53.2746"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Derry",
+            "marker-color":"#ffff00",
+            "marker-symbol":"monument",
+            "line":"yellow",
+            "popupContent":"Derry: Old city in Norhtern Ireland. (called Londonderry by the Unionists)."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-7.30879",
+               "54.9974"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Ocho Tapas Bar",
+            "marker-color":"#FFA500",
+            "marker-symbol":"restaurant",
+            "line":"orange",
+            "popupContent":"Ocho Tapas Bar: Tapas bar in Portrush. We really liked the peppercorn pork dish."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.65453",
+               "55.2078"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Dunlace Castle",
+            "marker-color":"#0000ff",
+            "marker-symbol":"embassy",
+            "line":"blue",
+            "popupContent":"Dunlace Castle: A now-ruined medieval castle in Northern Ireland. It is located on the edge of a basalt outcropping in County Antrim, and is accessible via a bridge connecting it to the mainland."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.57991",
+               "55.2108"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Giants Causeway",
+            "marker-color":"#008000",
+            "marker-symbol":"park",
+            "line":"green",
+            "popupContent":"Giants Causeway: An area of about 40,000 interlocking basalt columns, the result of an ancient volcanic eruption. One of the coolest geological features I have ever seen."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-6.51156",
+               "55.2408"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Queens university",
+            "marker-color":"#008000",
+            "marker-symbol":"park",
+            "line":"green",
+            "popupContent":"Queens University: Classic university -- very pretty with gorgeous botanical gardens."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-5.93509",
+               "54.5845"
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"French Village",
+            "marker-color":"#FFA500",
+            "marker-symbol":"restaurant",
+            "line":"orange",
+            "popupContent":"French Village: A cute cafe we where we bought food. I really enjoyed the decor and menu."
+         },
+         "geometry":{
+            "type":"Point",
+            "coordinates":[
+               "-5.93242",
+               "54.5863"
+            ]
+         }
+      }
+   ]
+}

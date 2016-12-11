@@ -29,10 +29,10 @@ function expand_projects() {
 		$('#aboutprojects').css("opacity", "1");
 		$('#projectsdiv').html("<span class='buttons'><button class='project_button' onclick='location.href=\"http://www.anabealo.com/nqueens\"'>N-Queens</button>" +
 							"<button class='project_button' onclick='location.href=\"http://www.anabealo.com/data_structures\"'>Data Structure Tutorial</button></span>" + 
-							"<span class='buttons'><button class='project_button' onclick='location.href=\"http://www.anabealo.com/map/map.html\"'>Places I've been</button>" +
+							"<span class='buttons'><button class='project_button' onclick='location.href=\"http://www.anabealo.com/map/\"'>Places I've been</button>" +
 							"<button class='project_button' onclick='location.href=\"http://www.anabealo.com/hashtables\"'>Hashtable Practice</button></span>" +
 							"<span class='buttons'><button class='project_button' onclick='location.href=\"http://www.anabealo.com/greedy\"'>Greedy Game</button>" +
-							"<button class='project_button' onclick='location.href=\"http://www.anabealo.com/greedy\"'>Graph Algorithm Visualizer</button></span>");
+							"<button class='project_button' onclick='location.href=\"http://www.anabealo.com/graph_ai_algs\"'>Graph Algorithm Visualizer</button></span>");
 		// $('#projectsdiv').html("<div id='col1'> </div>" + 
 		// 					   "<ul> "	+
 		// 					   "<div id='col2'> </div> ");
