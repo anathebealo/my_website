@@ -90,3 +90,23 @@ h3 {
 a {
 	color: white;
 }
+
+#footer {
+	width: 100%;
+	height: 40px;
+	float: bottom;
+}
+
+.footItem {
+	display: inline;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: white;
+	font-family: Abel, sans-serrif;
+}
+
+#center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
