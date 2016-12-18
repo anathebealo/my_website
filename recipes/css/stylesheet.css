@@ -97,7 +97,7 @@ img {
 	font-family: 'Farsan', cursive;
 }
 
-#sidebar_butt {
+.sidebar_butt {
 	margin-top: 0px;
 	margin-bottom: 10px;
 	width: 70%;
