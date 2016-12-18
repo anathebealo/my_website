@@ -10,6 +10,33 @@ body{
     width: 100%;
 }
 
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+#footer {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footItem {
+	display: inline;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: black;
+	font-family: Farsan, sans-serif;
+}
+
+#center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
 .header{
     background: url("images/header.jpg") no-repeat top center fixed;
     background-size: contain;

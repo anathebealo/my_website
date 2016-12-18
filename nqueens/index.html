@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
+
 <head>
   <title> N-Queens Project Page </title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
-  <script src="old_nqueens_script.js"> </script>
+  <script src="script.js"> </script>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script type="text/javascript" src="d3/d3.v3.js"></script>
 </head>
 
 <body>
+<div id="wrapper">
+  <!-- main container -->
   <div id="mainContainer">
     <div id="text">
       <h1> N-Queens Solver </h1>
-      <h2> In the game of chess, the queen can move in a straight line in any direction until she reaches the edge of the board or another piece. The classical puzzle called 8-queens is one that asks the solver to place 8 queens onto a standard 8x8 chessboard such that no two queens are able to capture eachother (cannot move into eachother). I have chosen to extend this problem into n-queens - place n queens onto an nxn chessboard with no possible collisions by the queens. 
+      <h2> In the game of chess, the queen can move in a straight line in any direction until she reaches the edge of the board or another piece. The classical puzzle called 8-queens is one that asks the solver to place 8 queens onto a standard 8x8 chessboard such that no two queens are able to capture eachother (cannot move into eachother). This is an extention to 8-queens, "N-queens"! Place N queens onto an NxN chessboard such that no two queens can capture each other. 
       <br><br> 
       Enter a number you wish to use as n and a solution to the problem will appear below.</h2>
     </div>
     <div id="info_input">
-        <p>Number of Queens: <input type="text" name="name" id="get_n"/>  <button id="generateBoard" onclick="start_game()">Generate Board</button> </p>
+        <p>Number of Queens: <input type="text" name="name" id="get_n">  <button id="generateBoard" onclick="start_game()">Generate Board</button> </p>
     </div>
 
     <div id="boardContainer">
-
     </div>
   </div>
 
-</body>
+  <!-- footer -->
+  <div id="footer">
+    <hr>
+    <div id="center">
+      <span class="footItem"> 
+        <a href="www.anabealo.com">Home</a>
+      </span>
+      <span class="footItem">
+        Copyright Ana Bealo 2016
+      </span>
+      <span class="footItem">
+        Many thanks to google for <a href="https://fonts.google.com/">free fonts</a>
+      </span>
+    </div>
+  </div>
 
-<!-- <div id="footer">
-    <a href="projects.html"> Back </a>
-</div> -->
-
-<script> 
-$("#get_n").keyup(function(event){
-    if(event.keyCode == 13){
+  <script> 
+    $("#get_n").keyup(function(event){
+      if(event.keyCode == 13){
         $("#generateBoard").click();
-    }
-});
-</script> 
+      }
+    });
+  </script> 
+</div> <!-- wrapper -->
+</body>
 
 </html>

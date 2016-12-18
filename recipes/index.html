@@ -17,31 +17,49 @@
 </head>
 
 <body>
-	<div class="loader">
-		
-	</div>
-	<div class=header>
-	<h1> My Recipes </h1>
-		<!-- <img class="header" src="images/header.jpg"> -->
-	</div>
-	<div class="searchGroup">
-	  <label for="search">Search For Categories: </label>
-	  <input id="search"> <br>
-	  <button id="searchSubmit" onclick="show_tag()">Lookup Category</button>
-	  <button id="showAllSubmit" onclick="draw_tag_thumbnails()">View All Categories</button>
-	  <button id="showAllSubmit" onclick="draw_all_tag_thumbnails()">Hide Category View</button>
-	</div>
-	<div id="buffer">
+	<div id="wrapper">
+		<div class="loader">
+			
+		</div>
+		<div class=header>
+			<h1> My Recipes </h1>
+			<!-- <img class="header" src="images/header.jpg"> -->
+		</div>
+		<div id="content">
+		<div class="searchGroup">
+		  <label for="search">Search For Categories: </label>
+		  <input id="search"> <br>
+		  <button id="searchSubmit" onclick="show_tag()">Lookup Category</button>
+		  <button id="showAllSubmit" onclick="draw_tag_thumbnails()">View All Categories</button>
+		  <button id="showAllSubmit" onclick="draw_all_tag_thumbnails()">Hide Category View</button>
+		</div>
+		<div id="buffer">
 
-	</div>
-	<div id="master_tag_thumbnail_container"> 
-	</div>
+		</div>
+		<div id="master_tag_thumbnail_container"> 
+		</div>
 
-	<script src="js/tag_script.js"></script>
-	<script>
-		get_setup(); 
-	</script>
+		<script src="js/tag_script.js"></script>
+		<script>
+			get_setup(); 
+		</script>
+		</div>
 
+		<div id="footer">
+			<hr>
+			<div id="center">
+			<span class="footItem"> 
+				<a href="www.anabealo.com">Home</a>
+			</span>
+			<span class="footItem">
+				Copyright Ana Bealo 2016
+			</span>
+			<span class="footItem">
+				Many thanks to google for <a href="https://fonts.google.com/">free fonts</a>
+			</span>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

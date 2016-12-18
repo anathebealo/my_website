@@ -104,7 +104,7 @@ function makeThumbnail(name_of_file) {
 		recipes = get_recipes(data);
 		console.log(recipes);
 		//Creating the sidebar thumbnails
-		var sidebar_list = "<div id='sidebar_container'><button id='sidebar_butt' onclick='location.href=\"http://www.anabealo.com/recipes/recipe_tags.html\"'>All Recipes</button>";
+		var sidebar_list = "<button id='sidebar_butt' onclick='location.href=\"http://www.anabealo.com/recipes/recipe_tags.html\"'>All Recipes</button>";
 		var onclick = "";
 		for(var recipe_base in recipes) {
 			onclick = "getData('" + recipe_base + "')";
@@ -113,9 +113,8 @@ function makeThumbnail(name_of_file) {
 			sidebar_list+="</div>";
 		}
 
-		sidebar_list += "</div>";
 		console.log(sidebar_list);
-		document.getElementById("recipe_sidebar").innerHTML = sidebar_list;
+		document.getElementById("sidebar_container").HTML += sidebar_list;
 	});
 }
 
